@@ -26,13 +26,13 @@
         <div class="menu">
             <ul>
                 <li><a href="banggiaphucvu.php">BẢNG GIÁ PHỤC VỤ</a></li>
-                <li><a href="aodoikham.php">ÁO ĐỐI KHÂM</a></li>
-                <li><a href="aogiaolinh.php">ÁO GIAO LĨNH</a></li>
-                <li><a href="aonhatbinh.php">ÁO NHẬT BÌNH</a></li>
-                <li><a href="aotac.php">ÁO TẮC</a></li>
-                <li><a href="aonguthan.php">ÁO NGŨ THÂN</a></li>
-                <li><a href="blog.php">BLOG</a></li>
-                <li><a href="lienhe.php">LIÊN HỆ</a></li>
+                <li><a href="Aodoikham.php">ÁO ĐỐI KHÂM</a></li>
+                <li><a href="Aogiaolinh.php">ÁO GIAO LĨNH</a></li>
+                <li><a href="Aonhatbinh.php">ÁO NHẬT BÌNH</a></li>
+                <li><a href="Aotac.php">ÁO TẮC</a></li>
+                <li><a href="Aonguthan.php">ÁO NGŨ THÂN</a></li>
+                <li><a href="Blog.php">BLOG</a></li>
+                <li><a href="Lienhe.php">LIÊN HỆ</a></li>
             </ul>
         </div>
         <div class="function">
