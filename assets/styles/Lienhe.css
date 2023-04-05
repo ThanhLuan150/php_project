@@ -165,6 +165,34 @@
     font-weight: 600;
 }
 
+.button-fromt {
+    width: 131px;
+    height: 42px;
+    align-items: center;
+    box-shadow: #000000 0px 0px 0px 0px;
+    color: #3e3e3e;
+    display: inline-flex;
+    font-family: Mulish;
+    font-size: 13px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 18px;
+    padding: 12px 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.h2chiduong {
+    width: 550px;
+    height: 30px;
+    color: #242424;
+    font-family: Mulish;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 33.6px;
+    margin: 0px 0px 20px;
+}
+
 #post {
     width: 80%;
     height: auto;
