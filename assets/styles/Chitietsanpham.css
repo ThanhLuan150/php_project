@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding:0;
+}
+.header{
+    height: 100px;
+    display:grid;
+    grid-template-columns:10% 50% 40% ;
+    background: #fff;
+}
+.img{
+    height: 100px;
+    width: 100px;
+    margin-left: 30px;
+}
+.menu{
+    margin-top: 39px;
+    margin-bottom: 39px;
+}
+ .menu ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap:22px;
+}
+.menu ul li a{
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height:5px;
+    color: #DD3333;
+}
+.menu ul li a:hover{
+    border-bottom: 2px solid #DD3333;
+}
+.function{
+    margin-top: 30px;
+    margin-bottom: 39px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+.functionsearch{
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.input{
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    height: 40px;
+    width: 300px;
+}
+
+.button{
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    background:#F2DFE3;
+    color: #DD3333;
+    border:1px solid #F2DFE3;
+    height: 40px;
+}
+.button a{ 
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #DD3333;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+.footer{
+    width: 100%;
+    background: #F2DFE3;
+    height: 400px;
+}
+.content{
+    display:grid;
+    grid-template-columns: 40% 30% 30%;
+    padding-top: 72px;
+    padding-left: 140px;
+    padding-bottom:53px ;
+    padding-right: 52px;
+}
+.content1{ 
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #333333;
+}
+.detail1{
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.img1{
+    Width:396.67px;
+    Height:550px;
+    border-radius: 10px;
+}
+.category ul{
+    display:flex;
+    gap:10px;
+}
+.category ul li {
+    list-style-type: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+}
+.categorya{
+    color: #777777;
+}
+
+.categoryp1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 41px;
+    color: #333333;
+}
+.categoryp2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #DD3333;
+}
+.list ul{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0000FF;
+}
+.addressp1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #000000;
+}
+.address ul{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: #000000;
+}
+.functionbutton{
+    Width:118px;
+    Height:27px;
+    background: #F2DFE3;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #DD3333;
+    border: 1px solid #F2DFE3;
+}
+.functionbutton1{
+    color:#DD3333;
+}
+.noiquyp1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FF0000;
+}
+.noiquyp2 ul{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    color: #000000;
+}
+.noidungp3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1p7x;
+    line-height: 20px;
+    color: #0000FF;
+}
+.noidung4{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FF0000;
+}
+.footer{
+    width: 100%;
+    background: #F2DFE3;
+    height: 400px;
+}
+.content{
+    display:grid;
+    grid-template-columns: 40% 30% 30%;
+    padding-top: 72px;
+    padding-left: 140px;
+    padding-bottom:53px ;
+    padding-right: 52px;
+}
+.content1{ 
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #333333;
+}
+
+
+
+
+
