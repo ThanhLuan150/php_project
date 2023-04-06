@@ -210,7 +210,7 @@
                     </div>
                 <?php  }
                 } else {
-                    echo "Không có kết quả để hiển thị ra";
+                    echo "Không có kết quả để hiển thị raa";
                 }
                 $mysqli->close();
                 ?>
@@ -223,3 +223,4 @@
     ?>
 </body>
 </html>
+
