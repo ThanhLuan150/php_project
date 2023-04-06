@@ -253,7 +253,7 @@
                                     <p class="informationproductp1"><?php echo $row["names"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["price"]; ?></p>
                                 <div class="button111">
-                                    <button class="bt2"><a class="a1"  href="detail1.php?id=<?php echo $row["id"];?>">Details</a></button>  
+                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
                                 </div>
                             </div>
