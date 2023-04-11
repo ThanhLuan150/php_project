@@ -9,147 +9,190 @@
     background: #EFEFEF;
 }
 
-.title {
-    position: absolute;
-    height: 52px;
-    width: 75%;
-    top: 3%;
+.grid-container {
+    display: grid;
     background: #FFFFFF;
-    border-radius: 10px;
+    grid-template-columns: 5% 40% 2% 10% 10% 5% 13% 15%;
+    height: 50px;
+    min-width: 1200px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .checkboxgiohang {
-    position: absolute;
+    display: flex;
+    transform: scale(1.8);
     justify-content: center;
-    top: 50%;
-    transform: translateY(-50%) scale(1.8);
-    margin-left: 1%;
+    margin-left: 10px;
+    align-items: center;
+    height: 100%;
 }
 
 .rowgionameproducts {
     display: flex;
-    position: absolute;
-    width: 100px;
-    height: 36px;
-    left: 58px;
-    top: 50%;
-    transform: translateY(-50%);
     align-items: center;
     justify-content: center;
+
 }
 
-.rowgiosizeproducts{
+.rowgiosizeproducts {
     display: flex;
-    position: absolute;
-    width: 100px;
-    height: 36px;
-    left: 550px;
-    top: 50%;
-    transform: translateY(-50%);
     align-items: center;
     justify-content: center;
-}
 
+}
 
 .rowgiopriceproducts {
     display: flex;
-    position: absolute;
-    width: 100px;
-    height: 36px;
-    left: 650px;
-    top: 50%;
-    transform: translateY(-50%);
-    align-items: center;
-    justify-content: center;
-}
-
-
-.rowgioquantityproducts {
-    display: flex;
-    position: absolute;
-    width: 100px;
-    height: 36px;
-    left: 750px;
-    top: 50%;
-    transform: translateY(-50%);
-    align-items: center;
-    justify-content: center;
-}
-
-.rowgiopricecoc {
-    display: flex;
-    position: absolute;
-    width: 100px;
-    height: 36px;
-    left: 850px;
-    top: 50%;
-    transform: translateY(-50%);
-    align-items: center;
-    justify-content: center;
-}
-
-.rowgiototalprices {
-    display: flex;
-    position: absolute;
-    width: 100px;
-    height: 36px;
-    left: 950px;
-    top: 50%;
-    transform: translateY(-50%);
     align-items: center;
     justify-content: center;
 }
 
 .rowgiotrangthaiproducts {
     display: flex;
-    position: absolute;
-    width: 100px;
-    height: 36px;
-    left: 1050px;
-    top: 50%;
-    transform: translateY(-50%);
     align-items: center;
     justify-content: center;
 }
 
-.contentgiohang {
-    position: absolute;
-    width: 75%;
-    min-height: 106px;
-    top: 6.5%;
+.rowgioquantityproducts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.rowgiopricecocs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowgiototalprices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    display: grid;
     background: #FFFFFF;
-    border-radius: 10px;
+    grid-template-columns: 5% 40% 2% 10% 10% 5% 13% 15%;
+    height: 100px;
+    min-width: 1200px;
+    border-radius: 0;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+.row:first-child {
+    border-top: none;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .row:last-child {
+    border-bottom: none;
+    border-radius: 0 0 10px 10px;
+  }
+
+.rowimgproduct{
+    display: flex;
+    align-items: center;
 }
 
-.rowimgproduct>.anhproduct {
+.rowgionameproduct{
     display: flex;
-    position: absolute;
-    Width: 65px;
-    Height: 70px;
-    left: 58px;
-    top: 50%;
-    transform: translateY(-50%);
     align-items: center;
+}
+.anhproduct{
+    width: 60px;
+    height: 65px;
+    border-radius: 5px 5px 5px 5px;
+}
+.nameproduct{
+    margin-left: 10px;
+}
+.rowgiosizeproduct, .rowgiopriceproduct, .rowgiotrangthaiproduct, .rowgioquantityproduct, .rowgiopricecoc, .rowgiototalprice{
+    display: flex;
+    align-items: center; 
     justify-content: center;
 }
-
-.rowgionameproduct {
+.chooseall{
     display: flex;
-    position: absolute;
-    width: 400px;
-    height: 36px;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+    margin-left: 60px;
 }
-
-
-.priceproduct {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 600px;
-
+.closeproduct{
+    display: flex;
+    align-items: center; 
+}
+.totalproducts{
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;
+}
+.totalprices{
+    display: flex;
+    align-items: center; 
+}
+.thanhtoanall{
+    display: flex;
+    align-items: center; 
+    
+}
+.thanhtoan{
+    color: #DD3333;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+}
+.list_schools{
+    display: grid ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:30px;
+    list-style-type:none;
+}
+.item{
+    background: #fff;
+    border-radius: 10px 10px 10px 10px;
+}
+.img4{
+    Width:262px;
+    Height:290px;
+    border-radius: 10px 10px 0 0 ;
+}
+.informationproductp1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-left: 13px;
+}
+.informationproductp2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ED2353;
+    margin-left: 13px;
+}
+.button111{
+    margin-bottom:20px;
+    margin-left: 13px;
+}
+.bt2{
+    background: #F2DFE3;
+    border-radius: 20px;
+    border: 1px solid  #F2DFE3 ;
+    height:30px;
+    width: 100px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+   
+}
+.a1{
+    color: #000000;
 }
