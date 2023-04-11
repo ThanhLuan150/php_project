@@ -1,9 +1,6 @@
 
-
 .body {
-    position: absolute;
     width: 100%;
-    height: 2512px;
     left: 1px;
     top: 100px;
     background: #EFEFEF;
@@ -27,49 +24,12 @@
     height: 100%;
 }
 
-.rowgionameproducts {
+.rowgionameproducts, .rowgiosizeproducts, .rowgiopriceproducts, .rowgiotrangthaiproducts, .rowgioquantityproducts, .rowgiopricecocs, .rowgiototalprices {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 800;
 
-}
-
-.rowgiosizeproducts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.rowgiopriceproducts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.rowgiotrangthaiproducts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.rowgioquantityproducts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.rowgiopricecocs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.rowgiototalprices {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .row {
