@@ -1,3 +1,41 @@
+
+<?php
+    // Enable error reporting to help with debugging
+    error_reporting(E_ALL);
+    
+    // Function to display an alert box
+    function alert($message) {
+        echo "<script>alert('$message');</script>";
+    }
+
+    // Connect to the database
+    $conn = mysqli_connect("localhost", "root", "", "ren_cothes");
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Check if the login form has been submitted
+    if(isset($_POST['submit'])){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        // Escape the input to prevent SQL injection attacks
+        $username = mysqli_real_escape_string($conn, $username);
+        $password = mysqli_real_escape_string($conn, $password);
+
+        // Query the database to check if the username and password are correct
+        $sql = "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+
+        // Check if a row was returned
+        if (!empty($row)) {
+            echo "<script>alert('Đăng nhập thành công')</script>";
+        } else {
+            echo "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng')</script>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +43,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/dangnhap.css">
+    <link rel="stylesheet" href="../assets/styles/Dangnhap.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -71,15 +109,15 @@
                         <br> <br>
                         <div class="name">
                             <i class="fa-solid fa-user" style="position:relative;left:20px;"></i>
-                            <input id="search" type="text" class="input" name="" placeholder="Tên đăng nhập" >
+                            <input id="search" type="text" class="input" name="username" placeholder="Tên đăng nhập"  required value="<?php echo  $_POST['username']; ?>">
                         </div> <br>
                         <div class="name">
                             <i class="fa-solid fa-lock" style="position:relative;left:20px;"></i>
-                            <input id="search" type="text" class="input" name="" placeholder=" Mật khẩu">
+                            <input id="search" type="password" class="input" name="password" placeholder=" Mật khẩu"  required value="<?php echo  $_POST['password']; ?>">
                         </div> <br> <br>
-                        <p class="dangkyp2" ><input type="checkbox">                   Nhớ mật khẩu</p> <br>
-                        <button type="submit" class="button1">Đăng nhập</button> <br> <br> <br> <br>
-                        <p class="dangkyp3">Hoặc đặng nhập bằng    <i class="fa-brands fa-facebook"></i>        <i class="fa-brands fa-google"></i>        <i class="fa-brands fa-instagram"></i>
+                        <p class="dangkyp2" ><input type="checkbox">Nhớ mật khẩu</p> <br>
+                        <button type="submit" name="submit" class="button1">Đăng nhập</button> <br> <br> <br> <br>
+                        <p class="dangkyp3">Hoặc đặng nhập bằng <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-google"></i>        <i class="fa-brands fa-instagram"></i>
                     </form></p> 
                 </div>
                 <div class="img">

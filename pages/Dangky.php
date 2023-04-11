@@ -1,3 +1,44 @@
+<?php 
+error_reporting(0);
+function alert($mes){
+    echo "<script> alert('$mes');</script>";
+}
+   // Kết nối CSDL
+$conn = mysqli_connect("localhost","root","","ren_cothes");
+if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm_password =$_POST['confirm_password'];
+    $a=0;
+    if ( $password !=  $confirm_password ){
+    //    header("location:dangky.php");
+        alert("password not the same");
+        $a++;
+    }
+    // Kiểm tra tính hợp lệ của email và mật khẩu
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        alert("wrong email");
+        $a++;
+    }
+    if (strlen($password) < 6) {
+        // header("location:dangky.php");
+        alert("need length password");
+        $a++;
+    }
+    if(!$a){
+        $date = date('m/d/Y h:i:s a', time());
+        $result= mysqli_query($conn,"INSERT INTO `users`(`username`, `email`, `password`, `confirm_password`, `created_at`) VALUES ('$username','$email','$password','$confirm_password','$date')");
+        if($result){
+            alert('thanh cong');
+            header("location:Hom.php");
+            
+        }
+    }
+}
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +46,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/dangki.css">
+    <link rel="stylesheet" href="../assets/styles/Dangky.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -18,6 +59,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<body>
+    
     <div class="header">
         <div class="image">
             <a href="home.php"><img class="img" src="../img/logo (1).jpg" alt=""></a>
@@ -70,23 +113,23 @@
                         <br> <br>
                         <div class="name">
                             <i class="fa-solid fa-user" style="position:relative;left:20px;"></i>
-                            <input id="search" type="text" class="input" name="username'" placeholder="Tên đăng nhập" >
+                            <input id="search" type="text" class="input" name="username" placeholder="Tên đăng nhập"  required value="<?php echo  $_POST['username']; ?>" >
                         </div> <br>
                         <div class="name">
                             <i class="fa-solid fa-envelope"style="position:relative;left:20px;"></i>
-                            <input id="search" type="text" class="input" name="email"placeholder=" Email" >
+                            <input id="em" type="email" class="input" name="email" placeholder=" Email"  required value="<?php echo  $_POST['email']; ?>" >
                         </div> <br>
                         <div class="name">
                             <i class="fa-solid fa-lock" style="position:relative;left:20px;"></i>
-                            <input id="search" type="text" class="input" name="password" placeholder=" Mật khẩu">
+                            <input id="search" type="password" class="input" name="password" placeholder="Mật khẩu"  required value="<?php echo $_POST['password']; ?>">
                         </div> <br>
                         <div class="name">
                             <i class="fa-solid fa-user"style="position:relative;left:20px;"></i>
-                            <input id="search" type="text" class="input" name="confirm_password"placeholder=" Nhập lại mật khẩu" >
+                            <input id="search" type="password" class="input" name="confirm_password" placeholder=" Nhập lại mật khẩu"  required value="<?php echo $_POST['confirm_password']; ?>" >
                         </div>
                         <br> <br>
-                        <p class="dangkyp2" ><input type="checkbox">           Tôi đồng ý với tất cả các tuyên bố trong Điều khoản dịch vụ</p> <br>
-                        <button type="submit" name="btn_submit"  class="button1">Đăng ký</button> 
+                        <p class="dangkyp2" ><input type="checkbox">Tôi đồng ý với tất cả các tuyên bố trong Điều khoản dịch vụ</p> <br>
+                        <button type="submit" name="submit"  class="button1">Đăng ký</button> 
                     </form>
                 </div>
                 <div class="img">
