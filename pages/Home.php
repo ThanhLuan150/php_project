@@ -75,7 +75,7 @@
             <p class="inforproductp">Dịch Vụ Chính Cổ Phục TTDVL</p>
             <p class="inforproductp1">Địa điểm cho thuê - Bán cổ phục các loại giá rẻ - Uy tín - Chất lượng</p>
             <center>
-                <img class="img3" src="../img/noidung1.jpg" alt="">
+                <img class="img3" src="./img/noidung1.jpg" alt="">
                 <button class="inforproducbutton" type="submit"><a  style="color:#fff; border-radius:10px;" href="banggiaphucvu.php">THUÊ CỔ PHỤC</a></button>
             </center>
         </div>
@@ -88,7 +88,7 @@
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = "LISTPRODUCT";
+            $dbname = "rent_clothes";
 
             // Create connection
             $mysqli = new mysqli($servername, $username, $password, $dbname);
@@ -96,7 +96,7 @@
                 die("ERROR: Could not connect. " . $mysqli->connect_error);
             }
 
-            $sql = "SELECT * FROM LISTPRODUCT WHERE names ='Áo ngũ thân-tân niên hoài niệm';";
+            $sql = "SELECT*FROM clothes WHERE id_clothes between 1 and 20 ;";
             $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -106,14 +106,15 @@
                     <?php while ($row = $result->fetch_assoc()) { ?>
                             <div class="item">
                                 <div class="image11">
-                                    <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                    <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                    <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
-                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
+                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
                                 </div>
                             </div>

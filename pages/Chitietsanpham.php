@@ -133,14 +133,14 @@
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = "LISTPRODUCT";
+            $dbname = "rent_clothes";
             // Create connection
             $mysqli = new mysqli($servername, $username, $password, $dbname);
             if ($mysqli === false) {
               die("ERROR: Could not connect. " . $mysqli->connect_error);
             }
 
-            $sql = "SELECT * FROM LISTPRODUCT;";
+            $sql = "SELECT*FROM clothes WHERE id_clothes between 1 and 20 ;";
             $result = $mysqli->query($sql);
         ?>
         <!-- ***** Call to Action Start ***** -->
@@ -151,22 +151,22 @@
             ?>
               <div class="detail1">             
                 <?php while ($row = $result->fetch_assoc()) {
-                  if ($id == $row["id"]) {
+                  if ($id == $row["id_clothes"]) {
                 ?>
                   <div class="img">
-                    <img class="img1" src="<?php echo $row["img"]; ?>" alt="Card image">
+                    <img class="img1" src="<?php echo $row["image"]; ?>" alt="Card image">
                   </div>
                   <div class="detail2">
                       <div class="category">
                           <ul>
                             <li><a class="categorya" href="home.php">Trang chủ</a></li>
                             <li><a class="categorya" href="sanpham.php">Sản phẩm</a></li>
-                            <li><a class="categorya" href="#"><?php echo $row["names"]; ?></a></li>
+                            <li><a class="categorya" href="#"><?php echo $row["name"]; ?></a></li>
                           </ul>
                       </div>
                       <br>
-                      <p class="categoryp1"><?php echo $row["names"]; ?></p>
-                      <p class="categoryp2"><?php echo $row["price"]; ?></p>
+                      <p class="categoryp1"><?php echo $row["name"]; ?></p>
+                      <p class="categoryp2"><?php echo $row["rent_prices"]; ?></p>
                       <div class="list">
                           <ul>
                             <li>Có Hàng Tại : Quận Sơn Trà</li>
@@ -211,11 +211,11 @@
         <br>
         <br>
           <center>
-            <img class="img1" src="<?php echo $row["img"]; ?>" alt="Card image">
+            <img class="img1" src="<?php echo $row["image"]; ?>" alt="Card image">
             <br><br><br>
-            <img class="img1" src="<?php echo $row["img"]; ?>" alt="Card image">
+            <img class="img1" src="<?php echo $row["image"]; ?>" alt="Card image">
             <br><br><br>
-            <img class="img1" src="<?php echo $row["img"]; ?>" alt="Card image">
+            <img class="img1" src="<?php echo $row["image"]; ?>" alt="Card image">
           </center>
         </div>
     </div>
