@@ -83,20 +83,10 @@
     <div class="background">
         <div class="container">
             <br>
-            <p class="backgroundp1">Áo ngũ thân</p>
+            <p class="backgroundp1">Áo Đối Khẩm</p>
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "rent_clothes";
-
-            // Create connection
-            $mysqli = new mysqli($servername, $username, $password, $dbname);
-            if ($mysqli === false) {
-                die("ERROR: Could not connect. " . $mysqli->connect_error);
-            }
-
-            $sql = "SELECT*FROM clothes WHERE id_clothes between 1 and 20 ;";
+            include('../database/ketnoidatabase.php');
+            $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 1 and 20;";
             $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -115,52 +105,7 @@
                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
-                                </div>
-                            </div>
-                    </div>
-                <?php  }
-                } else {
-                    echo "Không có kết quả để hiển thị ra";
-                }
-                $mysqli->close();
-                ?>
-            </div>
-        </div>
-        <br>
-        <div class="container">
-            <p class="backgroundp1">Áo tấc</p>
-            <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "LISTPRODUCT";
-
-            // Create connection
-            $mysqli = new mysqli($servername, $username, $password, $dbname);
-            if ($mysqli === false) {
-                die("ERROR: Could not connect. " . $mysqli->connect_error);
-            }
-
-            $sql = "SELECT * FROM LISTPRODUCT WHERE names ='Áo tấc-tân niên hoài niệm';";
-            $result = $mysqli->query($sql);
-
-            if ($result->num_rows > 0) {
-                // output data of each row
-            ?>
-                <div class="list_schools">
-                    <?php while ($row = $result->fetch_assoc()) { ?>
-                            <div class="item">
-                                <div class="image11">
-                                    <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
-                                </div>
-                                <br>
-                                <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["price"]; ?></p>
-                                <div class="button111">
-                                    <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
-                                    <button class="bt2"><a  class="a1"href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
+                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
                                 </div>
                             </div>
                     </div>
@@ -176,18 +121,8 @@
         <div class="container">
             <p class="backgroundp1">Áo giao lĩnh</p>
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "LISTPRODUCT";
-
-            // Create connection
-            $mysqli = new mysqli($servername, $username, $password, $dbname);
-            if ($mysqli === false) {
-                die("ERROR: Could not connect. " . $mysqli->connect_error);
-            }
-
-            $sql = "SELECT * FROM LISTPRODUCT WHERE names ='Áo giao lĩnh-tân niên hoài niệm';";
+             include('../database/ketnoidatabase.php');
+             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 20 and 40;";
             $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -197,15 +132,124 @@
                     <?php while ($row = $result->fetch_assoc()) { ?>
                             <div class="item">
                                 <div class="image11">
-                                    <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                 <div class="button111">
-                                    <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
-                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
+                                    <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
+                                    <button class="bt2"><a  class="a1"href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
+                                </div>
+                            </div>
+                    </div>
+                <?php  }
+                } else {
+                    echo "Không có kết quả để hiển thị ra";
+                }
+                $mysqli->close();
+                ?>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <p class="backgroundp1">Áo nhật bình</p>
+            <?php
+             include('../database/ketnoidatabase.php');
+
+             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 41 and 60;";
+            $result = $mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+            ?>
+                <div class="list_schools">
+                    <?php while ($row = $result->fetch_assoc()) { ?>
+                            <div class="item">
+                                <div class="image11">
+                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
+                                </div>
+                                <br>
+                                <div class="informationproduct">
+                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
+                                <div class="button111">
+                                    <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
+                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
+                                </div>
+                            </div>
+                    </div>
+                <?php  }
+                } else {
+                    echo "Không có kết quả để hiển thị ra";
+                }
+                $mysqli->close();
+                ?>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <p class="backgroundp1">Áo nhật bình</p>
+            <?php
+             include('../database/ketnoidatabase.php');
+
+             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 61 and 80;";
+            $result = $mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+            ?>
+                <div class="list_schools">
+                    <?php while ($row = $result->fetch_assoc()) { ?>
+                            <div class="item">
+                                <div class="image11">
+                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
+                                </div>
+                                <br>
+                                <div class="informationproduct">
+                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
+                                <div class="button111">
+                                    <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
+                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
+                                </div>
+                            </div>
+                    </div>
+                <?php  }
+                } else {
+                    echo "Không có kết quả để hiển thị ra";
+                }
+                $mysqli->close();
+                ?>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <p class="backgroundp1">Áo tấc</p>
+            <?php
+             include('../database/ketnoidatabase.php');
+
+             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 81 and 101;";
+             // câu truy vấn này dùng để
+            $result = $mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+            ?>
+                <div class="list_schools">
+                    <?php while ($row = $result->fetch_assoc()) { ?>
+                            <div class="item">
+                                <div class="image11">
+                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
+                                </div>
+                                <br>
+                                <div class="informationproduct">
+                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
+                                <div class="button111">
+                                    <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
+                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
                                 </div>
                             </div>
                     </div>

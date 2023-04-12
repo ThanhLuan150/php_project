@@ -55,37 +55,6 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="content">
-            <div class="content1">
-<p class="content11">ÁO CỔ PHỤC TTDVL</p>
-                <p class="content11"><i class="fa-solid fa-location-dot"></i>   Chi Nhánh 1: 101b, Lê Hữu Trác , Phước Mỹ, Sơn Trà, Đà Nẵng</p>
-                <p class="content11"><i class="fa-solid fa-phone"></i>   Phone: 0702307677 ( Mr Trung)</p>
-                <p class="content11"><i class="fa-solid fa-location-dot"></i>   Chi Nhánh 2: 99 Tô Hiến Thành, Phước Mỹ, Sơn Trà, Đà Nẵng</p>
-                <p class="content11"><i class="fa-solid fa-phone"></i>   Phone: 0787628654 (Mr Luân)</p>
-                <p class="content11"><i class="fa-solid fa-envelope"></i>   Email: aocophucttdvl@gmail.com</p>
-                <p class="content11"><i class="fa-regular fa-calendar-pen"></i>   Giờ mở cửa: 8h30 đến 21h30 Từ thứ 2 đến Chủ nhật</p>
-            </div>
-            <div class="content1">
-                <p class="content11">DỊCH VỤ CHỤP ẢNH</p>
-                <p class="content11">Bảng giá thuê áo cổ phục</p>
-                <p class="content11">Thuê  áo đối khâm</p>
-                <p class="content11">Thuê áo giao lĩnh</p>
-                <p class="content11">Thuê áo nhật bình</p>
-                <p class="content11">Thuê áo tắc</p>
-                <p class="content11">Thuê áo ngũ thân</p>
-            </div>
-            <div class="content1">
-                <p class="content11">GIỚI THIỆU</p>
-                <p class="content11">Giói thiệu cho thuê áo cổ phục</p>
-                <p class="content11">Áo đối khâm</p>
-                <p class="content11">Áo giao lĩnh</p>
-                <p class="content11">Áo nhật bình</p>
-                <p class="content11">Áo tấc</p>
-                <p class="content11">Áo ngũ thân</p>
-                <p class="Content">Liên hệ</p>
-            </div>
-        </div>
-    </div>
+    <?php include('footer/footer.php') ?>
 </body>
 </html>
