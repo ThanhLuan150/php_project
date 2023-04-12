@@ -132,7 +132,7 @@
 
             include('../database/ketnoidatabase.php');
 
-            $sql = "SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories";
+            $sql = "SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 1 and 20;";
             $result = $mysqli->query($sql);
         ?>
         <!-- ***** Call to Action Start ***** -->
