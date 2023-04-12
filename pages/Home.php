@@ -122,7 +122,7 @@
             <p class="backgroundp1">Áo giao lĩnh</p>
             <?php
              include('../database/ketnoidatabase.php');
-             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 20 and 40;";
+             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 20 and 40 ;";
             $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
