@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
         $result= mysqli_query($conn,"INSERT INTO `users`(`username`, `email`, `password`, `confirm_password`, `created_at`) VALUES ('$username','$email','$password','$confirm_password','$date')");
         if($result){
             alert('thanh cong');
-            header("location:Hom.php");
+            header("https://www.facebook.com/");
             
         }
     }
