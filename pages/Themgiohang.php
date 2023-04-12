@@ -23,12 +23,12 @@
     <link rel="stylesheet" href="../assets/styles/Themgiohang.css">
 </head>
 
-<body>
-    <?php include('./header/header.php')
-    ?>
-    <div class="body">
-        <div class="container">
+<body style="background-color: #EFEFEF;">
 
+    <div class="body">
+        <?php include('./header/header.php')
+        ?>
+        <div class="container">
             <br><br>
             <div class="container-fluid">
                 <div class="row align-items-center">
@@ -60,8 +60,7 @@
                     </div>
                 </div>
             </div>
-
-            <br><br><br>
+            <br>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-auto">
@@ -102,6 +101,73 @@
                             <input class="checkboxall" type="checkbox">
                         </label>
                     </div>
+                    <div class="col-4 rowgionameproduct">
+                        <div class="rowimgproduct">
+                            <img class="anhproduct" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <div class="nameproduct">
+                            Áo giao lĩnh- tân niên hoài niệm
+                        </div>
+                    </div>
+                    <div class="col-1 rowgiosizeproduct">
+                        L
+                    </div>
+                    <div class="col-1 rowgiopriceproduct">
+                        100.000đ
+                    </div>
+                    <div class="col-1 rowgiotrangthaiproduct">
+                        Tốt
+                    </div>
+                    <div class="col-1 rowgioquantityproduct">
+                        10
+                    </div>
+                    <div class="col-2 rowgiopricecoc">
+                        500.000đ
+                    </div>
+                    <div class="col-1 rowgiototalprice">
+                        600.000đ
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="checkboxgiohang">
+                            <input class="checkboxall" type="checkbox">
+                        </label>
+                    </div>
+                    <div class="col-4 rowgionameproduct">
+                        <div class="rowimgproduct">
+                            <img class="anhproduct" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <div class="nameproduct">
+                            Áo giao lĩnh- tân niên hoài niệm
+                        </div>
+                    </div>
+                    <div class="col-1 rowgiosizeproduct">
+                        L
+                    </div>
+                    <div class="col-1 rowgiopriceproduct">
+                        100.000đ
+                    </div>
+                    <div class="col-1 rowgiotrangthaiproduct">
+                        Tốt
+                    </div>
+                    <div class="col-1 rowgioquantityproduct">
+                        10
+                    </div>
+                    <div class="col-2 rowgiopricecoc">
+                        500.000đ
+                    </div>
+                    <div class="col-1 rowgiototalprice">
+                        600.000đ
+                    </div>
+                </div>
+                <br>
+                <div class="row" style="border-bottom: 1px solid black;">
+                    <div class="col-auto">
+                        <label class="checkboxgiohang">
+                            <input class="checkboxall" type="checkbox">
+                        </label>
+                    </div>
                     <div class="col-1 chooseall">
                         Chọn tất cả
                     </div>
@@ -122,7 +188,6 @@
             <br><br>
             <div class="container">
                 <h2 class="backgroundp1">Xem thêm sản phẩm</h2>
-
                 <div class="list_schools">
                     <div class="item">
                         <div class="image11">
@@ -135,6 +200,7 @@
                             <div class="button111">
                                 <button class="bt2"><a class="a1" href="Chitietsanpham.php">Details</a></button>
                                 <button class="bt2"><a class="a1" href="orders.php">Đặt thuê</a></button>
+                                <button class="bt2"><a class="a1" href="themvaogiohang.php">Thêm vào giỏ hàng</a></button>
                             </div>
                         </div>
                     </div>
@@ -239,6 +305,7 @@
 
                 </div>
             </div>
+            <br>
         </div>
         <?php include('./footer/footer.php') ?>
     </div>

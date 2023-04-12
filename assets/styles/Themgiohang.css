@@ -1,17 +1,10 @@
-
-.body {
-    width: 100%;
-    left: 1px;
-    top: 100px;
-    background: #EFEFEF;
-}
-
 .grid-container {
     display: grid;
     background: #FFFFFF;
     grid-template-columns: 5% 40% 2% 10% 10% 5% 13% 15%;
     height: 50px;
     min-width: 1200px;
+    border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
 }
 
@@ -29,17 +22,18 @@
     align-items: center;
     justify-content: center;
     font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
 
 }
 
 .row {
     display: grid;
-    background: #FFFFFF;
+    background: #ffffff;
     grid-template-columns: 5% 40% 2% 10% 10% 5% 13% 15%;
     height: 100px;
     min-width: 1200px;
     border-radius: 0;
-    border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
 }
 .row:first-child {
@@ -49,7 +43,7 @@
   
   .row:last-child {
     border-bottom: none;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 10px 10px;
   }
 
 .rowimgproduct{
