@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/styles/Themgiohang.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -19,116 +18,230 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../assets/header/header.css">
+    <link rel="stylesheet" href="../assets/footer/footer.css">
+    <link rel="stylesheet" href="../assets/styles/Themgiohang.css">
 </head>
 
 <body>
-    <div class="header">
-        <div class="image">
-            <a href="home.php"><img class="img" src="./img/logo.jpg" alt=""></a>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="banggiaphucvu.php">BẢNG GIÁ PHỤC VỤ</a></li>
-                <li><a href="aodoikham.php">ÁO ĐỐI KHÂM</a></li>
-                <li><a href="aogiaolinh.php">ÁO GIAO LĨNH</a></li>
-                <li><a href="aonhatbinh.php">ÁO NHẬT BÌNH</a></li>
-                <li><a href="aotac.php">ÁO TẮC</a></li>
-                <li><a href="aonguthan.php">ÁO NGŨ THÂN</a></li>
-                <li><a href="blog.php">BLOG</a></li>
-                <li><a href="lienhe.php">LIÊN HỆ</a></li>
-            </ul>
-        </div>
-        <div class="function">
-            <div class="functionsearch">
-                <div class="search">
-                    <i class="fa-sharp fa-solid fa-magnifying-glass" data-toggle="modal" data-target="#myModal"></i>
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Tìm kiếm</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <input class="input" type="search" name="search" value="" placeholder="Nhập từ khóa">
-                                    <button class="button" type="submit" name="submit">Tìm kiếm</button>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="button" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="button"><a href="themgiohang.php">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                </a></button>
-            <button class="button"><a href="Dangnhap.php">Đăng nhập</a></button>
-            <button class="button"><a href="Dangky.php">Đăng ký</a></button>
-        </div>
-    </div>
+    <?php include('./header/header.php')
+    ?>
     <div class="body">
         <div class="container">
-            <div class="row title">
-                <div class="col-md-12">
-                    <label class="checkboxgiohang">
-                        <input class="checkboxall" type="checkbox">
-                    </label>
-                    <div class="rowgionameproducts">
+
+            <br><br>
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <label class="checkboxgiohang">
+                            <input class="checkboxall" type="checkbox">
+                        </label>
+                    </div>
+                    <div class="col-4 rowgionameproducts">
                         Sản phẩm
                     </div>
-                    <div class="rowgiosizeproducts">
+                    <div class="col-1 rowgiosizeproducts">
                         Size
                     </div>
-                    <div class="rowgiopriceproducts">
+                    <div class="col-1 rowgiopriceproducts">
                         Giá
                     </div>
-                    <div class="rowgiotrangthaiproducts">
+                    <div class="col-1 rowgiotrangthaiproducts">
                         Trạng thái
                     </div>
-                    <div class="rowgioquantityproducts">
+                    <div class="col-1 rowgioquantityproducts">
                         Số lượng
                     </div>
-                    <div class="rowgiopricecoc">
+                    <div class="col-2 rowgiopricecocs">
                         Tiền cọc
                     </div>
-                    <div class="rowgiototalprices">
+                    <div class="col-1 rowgiototalprices">
                         Tổng tiền
                     </div>
                 </div>
             </div>
-            <div class="row contentgiohang">
-                <div class="col-md-12 rowproduct">
-                    <label class="checkboxgiohang">
-                        <input class="checkboxproduct" type="checkbox">
-                    </label>
-                    <div class="rowgionameproduct">
+
+            <br><br><br>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="checkboxgiohang">
+                            <input class="checkboxall" type="checkbox">
+                        </label>
+                    </div>
+                    <div class="col-4 rowgionameproduct">
                         <div class="rowimgproduct">
                             <img class="anhproduct" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
                         </div>
                         <div class="nameproduct">
-                            Áo giao lĩnh- tân  niên hoài niệm
+                            Áo giao lĩnh- tân niên hoài niệm
                         </div>
                     </div>
-                    <div class="rowgiosizeproduct">
+                    <div class="col-1 rowgiosizeproduct">
                         L
                     </div>
-                    <div class="rowgiopriceproduct">
+                    <div class="col-1 rowgiopriceproduct">
                         100.000đ
                     </div>
-                    <div class="rowgiotrangthaiproducts">
-                        100%
+                    <div class="col-1 rowgiotrangthaiproduct">
+                        Tốt
                     </div>
-                    <div class="rowgioquantityproducts">
+                    <div class="col-1 rowgioquantityproduct">
                         10
                     </div>
-                    <div class="rowgiopricecoc">
-                        400.000đ
-                    </div>
-                    <div class="rowgiototalprices">
+                    <div class="col-2 rowgiopricecoc">
                         500.000đ
+                    </div>
+                    <div class="col-1 rowgiototalprice">
+                        600.000đ
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="checkboxgiohang">
+                            <input class="checkboxall" type="checkbox">
+                        </label>
+                    </div>
+                    <div class="col-1 chooseall">
+                        Chọn tất cả
+                    </div>
+                    <div class="col-1 closeproduct">
+                        Xóa
+                    </div>
+                    <div class="col-6 totalproducts">
+                        Tổng tiền (có 3 sản phẩm)
+                    </div>
+                    <div class="col-1 totalprices">
+                        3.300.000đ
+                    </div>
+                    <div class="col-2 thanhtoanall">
+                        <a href=""><button class="thanhtoan">Thanh toán</button></a>
                     </div>
                 </div>
             </div>
+            <br><br>
+            <div class="container">
+                <h2 class="backgroundp1">Xem thêm sản phẩm</h2>
+
+                <div class="list_schools">
+                    <div class="item">
+                        <div class="image11">
+                            <img class="img4" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <br>
+                        <div class="informationproduct">
+                            <p class="informationproductp1"></p>
+                            <p class="informationproductp2"></p>
+                            <div class="button111">
+                                <button class="bt2"><a class="a1" href="Chitietsanpham.php">Details</a></button>
+                                <button class="bt2"><a class="a1" href="orders.php">Đặt thuê</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image11">
+                            <img class="img4" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <br>
+                        <div class="informationproduct">
+                            <p class="informationproductp1"></p>
+                            <p class="informationproductp2"></p>
+                            <div class="button111">
+                                <button class="bt2"><a class="a1" href="Chitietsanpham.php">Details</a></button>
+                                <button class="bt2"><a class="a1" href="orders.php">Đặt thuê</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image11">
+                            <img class="img4" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <br>
+                        <div class="informationproduct">
+                            <p class="informationproductp1"></p>
+                            <p class="informationproductp2"></p>
+                            <div class="button111">
+                                <button class="bt2"><a class="a1" href="Chitietsanpham.php">Details</a></button>
+                                <button class="bt2"><a class="a1" href="orders.php">Đặt thuê</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image11">
+                            <img class="img4" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <br>
+                        <div class="informationproduct">
+                            <p class="informationproductp1"></p>
+                            <p class="informationproductp2"></p>
+                            <div class="button111">
+                                <button class="bt2"><a class="a1" href="Chitietsanpham.php">Details</a></button>
+                                <button class="bt2"><a class="a1" href="orders.php">Đặt thuê</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image11">
+                            <img class="img4" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <br>
+                        <div class="informationproduct">
+                            <p class="informationproductp1"></p>
+                            <p class="informationproductp2"></p>
+                            <div class="button111">
+                                <button class="bt2"><a class="a1" href="Chitietsanpham.php">Details</a></button>
+                                <button class="bt2"><a class="a1" href="orders.php">Đặt thuê</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image11">
+                            <img class="img4" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <br>
+                        <div class="informationproduct">
+                            <p class="informationproductp1"></p>
+                            <p class="informationproductp2"></p>
+                            <div class="button111">
+                                <button class="bt2"><a class="a1" href="Chitietsanpham.php">Details</a></button>
+                                <button class="bt2"><a class="a1" href="orders.php">Đặt thuê</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image11">
+                            <img class="img4" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <br>
+                        <div class="informationproduct">
+                            <p class="informationproductp1"></p>
+                            <p class="informationproductp2"></p>
+                            <div class="button111">
+                                <button class="bt2"><a class="a1" href="Chitietsanpham.php">Details</a></button>
+                                <button class="bt2"><a class="a1" href="orders.php">Đặt thuê</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image11">
+                            <img class="img4" src="https://dongphuchaianh.com/wp-content/uploads/2019/08/nhung-hinh-anh-ao-lop-dep-nhat-01.jpg" alt="">
+                        </div>
+                        <br>
+                        <div class="informationproduct">
+                            <p class="informationproductp1"></p>
+                            <p class="informationproductp2"></p>
+                            <div class="button111">
+                                <button class="bt2"><a class="a1" href="Chitietsanpham.php">Details</a></button>
+                                <button class="bt2"><a class="a1" href="orders.php">Đặt thuê</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
+        <?php include('./footer/footer.php') ?>
     </div>
+
+
 </body>

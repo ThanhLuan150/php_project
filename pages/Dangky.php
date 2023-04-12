@@ -46,6 +46,8 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../assets/footer/footer.css">
+    <link rel="stylesheet" href="../assets/header/header.css">
     <link rel="stylesheet" href="../assets/styles/Dangky.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
@@ -59,11 +61,9 @@ if(isset($_POST['submit'])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-    
     <div class="header">
         <div class="image">
-            <a href="home.php"><img class="img" src="../img/logo (1).jpg" alt=""></a>
+            <a href="home.php"><img class="img" src="../img/logo.jpg" alt=""></a>
         </div>
         <div class="menu">
             <ul>

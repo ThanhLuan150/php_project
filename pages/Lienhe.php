@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../assets/styles/Lienhe.css">
+    <link rel="stylesheet" href="../assets/footer/footer.css">
+    <link rel="stylesheet" href="../assets/header/header.css">
+
+
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -19,54 +23,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-        <div class="header">
-            <div class="image">
-                <img class="img" src="../img/logo.jpg" alt="">
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="banggiaphucvu.php">BẢNG GIÁ PHỤC VỤ</a></li>
-                    <li><a href="aodoikham.php">ÁO ĐỐI KHÂM</a></li>
-                    <li><a href="aogiaolinh.php">ÁO GIAO LĨNH</a></li>
-                    <li><a href="aonhatbinh.php">ÁO NHẬT BÌNH</a></li>
-                    <li><a href="aotac.php">ÁO TẮC</a></li>
-                    <li><a href="aonguthan.php">ÁO NGŨ THÂN</a></li>
-                    <li><a href="blog.php">BLOG</a></li>
-                    <li><a href="lienhe.php">LIÊN HỆ</a></li>
-                </ul>
-            </div>
-            <div class="function">
-                <div class="functionsearch">
-                    <div class="search">
-                        <i  class="fa-sharp fa-solid fa-magnifying-glass" data-toggle="modal" data-target="#myModal"></i>
-                        <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Tìm kiếm</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <input class="input" type="search" name="search" value="" placeholder="Nhập khóa">
-                                        <button class="button" type="submit" name="submit">Tìm kiếm</button>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="button" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-    
-                        </div>
-                    </div>
-                </div>
-                <button class="button"><a  href="themgiohang.php">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a></button>
-                <button class="button"><a  href="signin.php">Đăng nhập</a></button>
-                <button class="button"><a  href="signin.php">Đăng ký</a></button>
-            </div>
-        </div>
+        <?php include('header/header.php') ?>
+
         <div class="container-boy">
             <h1 class="element-title">LIÊN HỆ</h1>
             <div class="title2">
-                <a class="title-name" href="#">Home /</a> 
+                <a class="title-name" href="Hom.php">Home /</a> 
                 <span class="current">LIÊN HỆ</span>
             </div>																	
         </div>
@@ -74,6 +36,7 @@
 
             <div id="post">
             <div class="content-name">
+
                 <h2>ÁO CỔ PHỤC TTDVL</h2>
                 <img class="" src="../img/logo.jpg" alt="" width="100px" height="100px">
                 <p class="content22"><i class="fa-solid fa-location-dot"></i>   Chi Nhánh 1: 101b, Lê Hữu Trác , Phước Mỹ, Sơn Trà, Đà Nẵng</p>
@@ -83,6 +46,17 @@
                 <p class="content22"><i class="fa-solid fa-envelope"></i>   Email: aocophucttdvl@gmail.com</p>
                 <p class="content22"><i class="fa-regular fa-calendar-pen"></i>   Giờ mở cửa: 8h30 đến 21h30 Từ thứ 2 đến Chủ nhật</p>
             </div>
+
+                        <h2>ÁO CỔ PHỤC TTDVL</h2>
+                                    <img class="" src="../img/logo.jpg" alt="" width="100px" height="100px" data-wp-editing="1">
+                                    <p class="content22"><i class="fa-solid fa-location-dot"></i>   Chi Nhánh 1: 101b, Lê Hữu Trác , Phước Mỹ, Sơn Trà, Đà Nẵng</p>
+                                    <p class="content22"><i class="fa-solid fa-phone"></i>   Phone: 0702307677 ( Mr Trung)</p>
+                                    <p class="content22"><i class="fa-solid fa-location-dot"></i>   Chi Nhánh 2: 99 Tô Hiến Thành, Phước Mỹ, Sơn Trà, Đà Nẵng</p>
+                                    <p class="content22"><i class="fa-solid fa-phone"></i>   Phone: 0787628654 (Mr Luân)</p>
+                                    <p class="content22"><i class="fa-solid fa-envelope"></i>   Email: aocophucttdvl@gmail.com</p>
+                                    <p class="content22"><i class="fa-regular fa-calendar-pen"></i>   Giờ mở cửa: 8h30 đến 21h30 Từ thứ 2 đến Chủ nhật</p>
+                    </div>
+
                     <div class="content-fromt">
                         <form>
                             <label for="fname">Tên của bạn </label><br>
@@ -101,41 +75,9 @@
                     </div>
             </div>
             </div>
-       
-    <div class="footer">
-        <div class="content">
-            <div class="content1">
-                <p class="content11">ÁO CỔ PHỤC TTDVL</p>
-                <p class="content11"><i class="fa-solid fa-location-dot"></i>   Chi Nhánh 1: 101b, Lê Hữu Trác , Phước Mỹ, Sơn Trà, Đà Nẵng</p>
-                <p class="content11"><i class="fa-solid fa-phone"></i>   Phone: 0702307677 ( Mr Trung)</p>
-                <p class="content11"><i class="fa-solid fa-location-dot"></i>   Chi Nhánh 2: 99 Tô Hiến Thành, Phước Mỹ, Sơn Trà, Đà Nẵng</p>
-                <p class="content11"><i class="fa-solid fa-phone"></i>   Phone: 0787628654 (Mr Luân)</p>
-                <p class="content11"><i class="fa-solid fa-envelope"></i>   Email: aocophucttdvl@gmail.com</p>
-                <p class="content11"><i class="fa-regular fa-calendar-pen"></i>   Giờ mở cửa: 8h30 đến 21h30 Từ thứ 2 đến Chủ nhật</p>
-            </div>
-            <div class="content1">
-                <p class="content11">DỊCH VỤ CHỤP ẢNH</p>
-                <p class="content11">Bảng giá thuê áo cổ phục</p>
-                <p class="content11">Thuê  áo đối khâm</p>
-                <p class="content11">Thuê áo giao lĩnh</p>
-                <p class="content11">Thuê áo nhật bình</p>
-                <p class="content11">Thuê áo tắc</p>
-                <p class="content11">Thuê áo ngũ thân</p>
-            </div>
-            <div class="content1">
-                <p class="content11">GIỚI THIỆU</p>
-                <p class="content11">Giói thiệu cho thuê áo cổ phục</p>
-                <p class="content11">Áo đối khâm</p>
-                <p class="content11">Áo giao lĩnh</p>
-                <p class="content11">Áo nhật bình</p>
-                <p class="content11">Áo tấc</p>
-                <p class="content11">Áo ngũ thân</p>
-                <p class="Content">Liên hệ</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+    
+   <?php include('footer/footer.php') ?>
+
        
        
 
