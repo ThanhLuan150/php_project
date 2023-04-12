@@ -5,7 +5,7 @@
         echo "<script> alert('$mes');</script>";
     }
     // Connect to the database
-    $conn = mysqli_connect("localhost", "root", "", "ren_cothes");
+    $conn = mysqli_connect("localhost", "root", "", "rent_clothes");
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
