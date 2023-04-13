@@ -19,9 +19,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-
-</style>
 </head>
 <body>
     <?php include('header/header.php')?>
@@ -99,18 +96,8 @@
                 <div class="container">
                     <br>
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "";
-                        $dbname = "LISTPRODUCT";
-
-                    // Create connection
-                        $mysqli = new mysqli($servername, $username, $password, $dbname);
-                        if ($mysqli === false) {
-                            die("ERROR: Could not connect. " . $mysqli->connect_error);
-                        }
-
-                        $sql = "SELECT * FROM LISTPRODUCT WHERE names ='Áo đối khẩm-tân niên hoài niệm';";
+                         include('../database/ketnoidatabase.php');
+                        $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 1 and 20 ;";
                         $result = $mysqli->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -120,15 +107,15 @@
                             <?php while ($row = $result->fetch_assoc()) { ?>
                                 <div class="item">
                                     <div class="image11">
-                                        <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                        <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                     </div>
                                     <br>
                                     <div class="informationproduct">
-                                        <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                        <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                        <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                        <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                         <div class="button111">
-                                            <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
-                                            <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
+                                            <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
+                                            <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
                                         </div>
                                     </div>
                             </div>
@@ -176,18 +163,9 @@
                     <div class="container">
                         <br>
                         <?php
-                            $servername = "localhost";
-                            $username = "root";
-                            $password = "";
-                            $dbname = "LISTPRODUCT";
+                            include('../database/ketnoidatabase.php'); 
 
-                        // Create connection
-                            $mysqli = new mysqli($servername, $username, $password, $dbname);
-                            if ($mysqli === false) {
-                                die("ERROR: Could not connect. " . $mysqli->connect_error);
-                            }
-
-                            $sql = "SELECT * FROM LISTPRODUCT WHERE names ='Áo giao lĩnh-tân niên hoài niệm';";
+                            $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 20 and 40 ;";
                             $result = $mysqli->query($sql);
 
                             if ($result->num_rows > 0) {
@@ -197,15 +175,15 @@
                                 <?php while ($row = $result->fetch_assoc()) { ?>
                                         <div class="item">
                                             <div class="image11">
-                                                <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                                <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                             </div>
                                             <br>
                                             <div class="informationproduct">
-                                                <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                                <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                                <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                             <div class="button111">
-                                                <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
-                                                <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
+                                                <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
+                                                <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
                                             </div>
                                         </div>
                                     </div>
@@ -253,19 +231,9 @@
                         <div class="container">
                             <br>
                             <?php
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "";
-                                $dbname = "LISTPRODUCT";
-
-                                // Create connection
-                                $mysqli = new mysqli($servername, $username, $password, $dbname);
-                                if ($mysqli === false) {
-                                    die("ERROR: Could not connect. " . $mysqli->connect_error);
-                                }
-
-                                $sql = "SELECT * FROM LISTPRODUCT WHERE names ='Áo nhật bình-tân niên hoài niệm';";
-                                $result = $mysqli->query($sql);
+                               include('../database/ketnoidatabase.php'); 
+                               $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 40 and 60 ;";
+                               $result = $mysqli->query($sql);
 
                                 if ($result->num_rows > 0) {
                                     // output data of each row
@@ -274,15 +242,15 @@
                                     <?php while ($row = $result->fetch_assoc()) { ?>
                                             <div class="item">
                                                 <div class="image11">
-                                                    <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                                 </div>
                                                 <br>
                                                 <div class="informationproduct">
-                                                    <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                                    <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                                    <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                                 <div class="button111">
-                                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
-                                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
+                                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
+                                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -330,19 +298,9 @@
                         <div class="container">
                             <br>
                             <?php
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "";
-                                $dbname = "LISTPRODUCT";
-
-                            // Create connection
-                                $mysqli = new mysqli($servername, $username, $password, $dbname);
-                                if ($mysqli === false) {
-                                    die("ERROR: Could not connect. " . $mysqli->connect_error);
-                                }
-
-                                $sql = "SELECT * FROM LISTPRODUCT WHERE names ='Áo tấc-tân niên hoài niệm';";
-                                $result = $mysqli->query($sql);
+                               include('../database/ketnoidatabase.php'); 
+                               $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 60 and 80 ;";
+                               $result = $mysqli->query($sql);
 
                                 if ($result->num_rows > 0) {
                                     // output data of each row
@@ -351,15 +309,15 @@
                                     <?php while ($row = $result->fetch_assoc()) { ?>
                                             <div class="item">
                                                 <div class="image11">
-                                                    <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                                 </div>
                                                 <br>
                                                 <div class="informationproduct">
-                                                    <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                                    <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                                    <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                                 <div class="button111">
-                                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
-                                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
+                                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
+                                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -407,18 +365,8 @@
                         <div class="container">
                             <br>
                             <?php
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "";
-                                $dbname = "LISTPRODUCT";
-
-                                // Create connection
-                                $mysqli = new mysqli($servername, $username, $password, $dbname);
-                                if ($mysqli === false) {
-                                    die("ERROR: Could not connect. " . $mysqli->connect_error);
-                                }
-
-                                $sql = "SELECT * FROM LISTPRODUCT WHERE names ='Áo ngũ thân-tân niên hoài niệm';";
+                                include('../database/ketnoidatabase.php'); 
+                                $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 80 and 100 ;";
                                 $result = $mysqli->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -428,15 +376,15 @@
                                     <?php while ($row = $result->fetch_assoc()) { ?>
                                             <div class="item">
                                                 <div class="image11">
-                                                    <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                                 </div>
                                                 <br>
                                                 <div class="informationproduct">
-                                                    <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                                    <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                                    <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                                 <div class="button111">
-                                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
-                                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
+                                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clthes"];?>">Details</a></button>  
+                                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
                                                 </div>
                                             </div>
                                     </div>

@@ -84,6 +84,7 @@
         <div class="container">
             <br>
             <p class="backgroundp1">Áo Đối Khẩm</p>
+            <?php include('../database/ketnoidatabase.php'); ?>
             <?php
             include('../database/ketnoidatabase.php');
             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 1 and 20;";
