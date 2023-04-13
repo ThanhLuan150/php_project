@@ -111,7 +111,7 @@
                                     </div>
                                     <br>
                                     <div class="informationproduct">
-                                        <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                        <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                         <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                         <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                         <div class="button111">
@@ -180,7 +180,7 @@
                                             </div>
                                             <br>
                                             <div class="informationproduct">
-                                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                                 <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                                 <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                             <div class="button111">
@@ -248,7 +248,7 @@
                                                 </div>
                                                 <br>
                                                 <div class="informationproduct">
-                                                    <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                                    <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                                 <div class="button111">
@@ -316,7 +316,7 @@
                                                 </div>
                                                 <br>
                                                 <div class="informationproduct">
-                                                    <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                                    <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                                 <div class="button111">
@@ -384,7 +384,7 @@
                                                 </div>
                                                 <br>
                                                 <div class="informationproduct">
-                                                    <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                                    <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                                 <div class="button111">

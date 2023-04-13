@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 13, 2023 lúc 02:24 PM
+-- Thời gian đã tạo: Th4 13, 2023 lúc 02:44 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -96,7 +96,7 @@ INSERT INTO `bill_detail` (`id_bill_detail`, `id_clothes`, `quality`, `id_bills`
 CREATE TABLE `blogs` (
   `id_blogs` int(11) NOT NULL,
   `image` text NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `name_blogs` varchar(50) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -123,7 +123,7 @@ CREATE TABLE `carts` (
 
 CREATE TABLE `categories` (
   `id_categories` int(11) NOT NULL,
-  `name` varchar(40) NOT NULL,
+  `name_categories` varchar(40) NOT NULL,
   `rent_prices` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -134,7 +134,7 @@ CREATE TABLE `categories` (
 -- Đang đổ dữ liệu cho bảng `categories`
 --
 
-INSERT INTO `categories` (`id_categories`, `name`, `rent_prices`, `created_at`, `updated_at`, `tiencoc`) VALUES
+INSERT INTO `categories` (`id_categories`, `name_categories`, `rent_prices`, `created_at`, `updated_at`, `tiencoc`) VALUES
 (1, 'Áo đối khâm', 200000, '2023-04-09 11:53:31', NULL, 100000),
 (2, 'Áo giao lĩnh', 300000, '2023-04-09 11:54:31', NULL, 150000),
 (3, 'Áo nhật bình', 400000, '2023-04-09 11:55:31', NULL, 200000),
@@ -163,7 +163,7 @@ CREATE TABLE `cccd` (
 CREATE TABLE `clothes` (
   `id_clothes` int(11) NOT NULL,
   `image` text NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `name_clothes` varchar(50) NOT NULL,
   `sex` varchar(3) NOT NULL,
   `description` text DEFAULT NULL,
   `id_categories` int(11) NOT NULL,
@@ -175,7 +175,7 @@ CREATE TABLE `clothes` (
 -- Đang đổ dữ liệu cho bảng `clothes`
 --
 
-INSERT INTO `clothes` (`id_clothes`, `image`, `name`, `sex`, `description`, `id_categories`, `created_at`, `updated_at`) VALUES
+INSERT INTO `clothes` (`id_clothes`, `image`, `name_clothes`, `sex`, `description`, `id_categories`, `created_at`, `updated_at`) VALUES
 (9, 'https://cf.shopee.vn/file/d0b863d55cf6347976176e9fac21ede1', 'Áo khoác đối khâm Liên Hoa', 'nu', ' Đối Khâm (對襟) Chữ Khâm (襟) có nghĩa là vạt áo trước. Đối Khâm là dạng áo có hai vạt trước đặt song song nhau, thường để buông thỏng. Tuỳ vào thời đại, đối khâm còn có những tên như bối tử 褙子 (thời Tống), phi phong (thời Minh), và nhật bình (thời Nguyễn).', 1, '2023-04-09 11:53:31', NULL),
 (10, 'https://1.bp.blogspot.com/-z7wD6zhoLis/Xy_3C17HeoI/AAAAAAAAy0M/KuPAnK-uvQkD7pd6l2Q1nrsyHFw5nPiigCLcBGAsYHQ/w457-h640/cho%2Bthue%2Bao%2Bdoi%2Bkham.jpg', 'Áo khoác đối khâm', 'nu', 'Đối Khâm (對襟) Chữ Khâm (襟) có nghĩa là vạt áo trước. Đối Khâm là dạng áo có hai vạt trước đặt song song nhau, thường để buông thỏng. Tuỳ vào thời đại, đối khâm còn có những tên như bối tử 褙子 (thời Tống), phi phong (thời Minh), và nhật bình (thời Nguyễn).', 1, '2023-04-09 11:53:31', NULL),
 (11, 'https://vietphuc.net/wp-content/uploads/2021/04/SAN_5111-1-768x1151.jpg', 'Áo Đối Khâm (Unisex)', 'nam', 'Đối Khâm (對襟) Chữ Khâm (襟) có nghĩa là vạt áo trước. Đối Khâm là dạng áo có hai vạt trước đặt song song nhau, thường để buông thỏng. Tuỳ vào thời đại, đối khâm còn có những tên như bối tử 褙子 (thời Tống), phi phong (thời Minh), và nhật bình (thời Nguyễn).', 1, '2023-04-09 11:53:31', NULL),
@@ -321,7 +321,7 @@ CREATE TABLE `lienhe` (
 
 CREATE TABLE `sizes` (
   `id_sizes` int(11) NOT NULL,
-  `name` varchar(40) NOT NULL,
+  `name_sizes` varchar(40) NOT NULL,
   `description` text DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` int(11) DEFAULT NULL
@@ -331,7 +331,7 @@ CREATE TABLE `sizes` (
 -- Đang đổ dữ liệu cho bảng `sizes`
 --
 
-INSERT INTO `sizes` (`id_sizes`, `name`, `description`, `created_at`, `updated_at`) VALUES
+INSERT INTO `sizes` (`id_sizes`, `name_sizes`, `description`, `created_at`, `updated_at`) VALUES
 (1, 'S', '', '2023-04-11 15:17:35', NULL),
 (2, 'M', '', '2023-04-11 15:18:35', NULL),
 (3, 'L', '', '2023-04-11 15:19:35', NULL),
@@ -345,7 +345,7 @@ INSERT INTO `sizes` (`id_sizes`, `name`, `description`, `created_at`, `updated_a
 
 CREATE TABLE `statuses` (
   `id_statuses` int(11) NOT NULL,
-  `name` varchar(40) NOT NULL,
+  `name_statuses` varchar(40) NOT NULL,
   `description` text NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL

@@ -75,7 +75,7 @@
             <p class="inforproductp">Dịch Vụ Chính Cổ Phục TTDVL</p>
             <p class="inforproductp1">Địa điểm cho thuê - Bán cổ phục các loại giá rẻ - Uy tín - Chất lượng</p>
             <center>
-                <img class="img3" src="./img/noidung1.jpg" alt="">
+                <img class="img3" src="../img/thongtin.jpg" alt="">
                 <button class="inforproducbutton" type="submit"><a  style="color:#fff; border-radius:10px;" href="banggiaphucvu.php">THUÊ CỔ PHỤC</a></button>
             </center>
         </div>
@@ -101,7 +101,7 @@
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                    <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                    <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
@@ -137,7 +137,7 @@
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
@@ -174,7 +174,7 @@
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
@@ -211,7 +211,7 @@
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
@@ -249,7 +249,7 @@
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">

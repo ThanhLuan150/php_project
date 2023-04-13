@@ -102,7 +102,7 @@
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                    <p class="informationproductp1"><?php echo $row["name"]; ?></p>
+                                    <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                 <div class="button111">
                                     <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
@@ -139,7 +139,7 @@
             <div class="container">
                 <p class=xemthemp>Xem thêm <?php 
                 include('../database/ketnoidatabase.php'); 
-                
+
                 ?></p>
             </div>
             <div class="background">

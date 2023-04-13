@@ -153,11 +153,11 @@
                           <ul>
                             <li><a class="categorya" href="home.php">Trang chủ</a></li>
                             <li><a class="categorya" href="sanpham.php">Sản phẩm</a></li>
-                            <li><a class="categorya" href="#"><?php echo $row["name"]; ?></a></li>
+                            <li><a class="categorya" href="#"><?php echo $row["name_categories"]; ?></a></li>
                           </ul>
                       </div>
                       <br>
-                      <p class="categoryp1"><?php echo $row["name"]; ?></p>
+                      <p class="categoryp1"><?php echo $row["name_clothes"]; ?></p>
                       <p class="categoryp2"><?php echo $row["rent_prices"]; ?></p>
                       <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                       <div class="list">
