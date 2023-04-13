@@ -153,7 +153,7 @@
                           <ul>
                             <li><a class="categorya" href="home.php">Trang chủ</a></li>
                             <li><a class="categorya" href="sanpham.php">Sản phẩm</a></li>
-                            <li><a class="categorya" href="#"><?php echo $row["categories_name"]; ?></a></li>
+                            <li><a class="categorya" href="#"><?php echo $row["name"]; ?></a></li>
                           </ul>
                       </div>
                       <br>
