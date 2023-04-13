@@ -14,6 +14,7 @@
     if(isset($_POST['submit'])){
         $username = $_POST["username"];
         $password = $_POST["password"];
+        $password = md5($password);
 
         // Escape the input to prevent SQL injection attacks
         $username = mysqli_real_escape_string($conn, $username);
