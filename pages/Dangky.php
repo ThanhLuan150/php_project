@@ -29,13 +29,19 @@ if(isset($_POST['submit'])){
     if(!$a){
         $date = date('m/d/Y h:i:s a', time());
         $result= mysqli_query($conn,"INSERT INTO `users`(`username`, `email`, `password`, `confirm_password`, `created_at`) VALUES ('$username','$email','$password','$confirm_password','$date')");
+
         if($result){
-            alert('thanh cong');
-            header("https://www.facebook.com/");
-            
+            header("Location:Home.php");
+            die();
+        } else {
+            alert("Failed to insert user information");
         }
+    } else {
+        alert("Errors occurred while processing form.");
     }
 }
+
+mysqli_close($conn);
     
 ?>
 
