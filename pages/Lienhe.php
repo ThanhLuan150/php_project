@@ -47,16 +47,6 @@
                 <p class="content22"><i class="fa-regular fa-calendar-pen"></i>   Giờ mở cửa: 8h30 đến 21h30 Từ thứ 2 đến Chủ nhật</p>
             </div>
 
-                        <h2>ÁO CỔ PHỤC TTDVL</h2>
-                                    <img class="" src="../img/logo.jpg" alt="" width="100px" height="100px" data-wp-editing="1">
-                                    <p class="content22"><i class="fa-solid fa-location-dot"></i>   Chi Nhánh 1: 101b, Lê Hữu Trác , Phước Mỹ, Sơn Trà, Đà Nẵng</p>
-                                    <p class="content22"><i class="fa-solid fa-phone"></i>   Phone: 0702307677 ( Mr Trung)</p>
-                                    <p class="content22"><i class="fa-solid fa-location-dot"></i>   Chi Nhánh 2: 99 Tô Hiến Thành, Phước Mỹ, Sơn Trà, Đà Nẵng</p>
-                                    <p class="content22"><i class="fa-solid fa-phone"></i>   Phone: 0787628654 (Mr Luân)</p>
-                                    <p class="content22"><i class="fa-solid fa-envelope"></i>   Email: aocophucttdvl@gmail.com</p>
-                                    <p class="content22"><i class="fa-regular fa-calendar-pen"></i>   Giờ mở cửa: 8h30 đến 21h30 Từ thứ 2 đến Chủ nhật</p>
-                    </div>
-
                     <div class="content-fromt">
                         <form>
                             <label for="fname">Tên của bạn </label><br>
