@@ -105,10 +105,11 @@
                                 <div class="informationproduct">
                                     <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -139,10 +140,7 @@
         <br>
         <div class="xemthem">
             <div class="container">
-                <p class=xemthemp>Xem thêm về <?php
-                    include('../database/ketnoidatabase.php');
-                    $sql="SELECT*FROM categories where  ORDER BY RAND() ;";
-                ?></p>
+                <p class=xemthemp>Xem thêm về những mẫu áo khác</p>
             </div>
             <div class="background">
             <div class="container">
@@ -166,10 +164,11 @@
                                 <div class="informationproduct">
                                     <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>

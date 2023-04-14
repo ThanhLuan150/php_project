@@ -88,7 +88,7 @@
             <?php include('../database/ketnoidatabase.php'); ?>
             <?php
             include('../database/ketnoidatabase.php');
-            $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 9 and 17;";
+            $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 9 and 17 ORDER BY RAND();";
             $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -108,7 +108,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                 </div>
                             </div>
                     </div>
@@ -125,7 +125,7 @@
             <p class="backgroundp1">Áo giao lĩnh</p>
             <?php
              include('../database/ketnoidatabase.php');
-             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 17 and 36 ;";
+             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 17 and 36 ORDER BY RAND() ;";
             $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -145,7 +145,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a  class="a1"href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                 </div>
                             </div>
                     </div>
@@ -163,7 +163,7 @@
             <?php
              include('../database/ketnoidatabase.php');
 
-             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 37 and 55;";
+             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 37 and 55 ORDER BY RAND();";
             $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -183,7 +183,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                 </div>
                             </div>
                     </div>
@@ -201,7 +201,7 @@
             <?php
              include('../database/ketnoidatabase.php');
 
-             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 56 and 75;";
+             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 56 and 75 ORDER BY RAND();";
             $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -221,7 +221,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                 </div>
                             </div>
                     </div>
@@ -239,7 +239,7 @@
             <?php
              include('../database/ketnoidatabase.php');
 
-             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 76 and 91;";
+             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 76 and 91 ORDER BY RAND();";
              // câu truy vấn này dùng để
             $result = $mysqli->query($sql);
 
@@ -260,7 +260,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                 </div>
                             </div>
                     </div>

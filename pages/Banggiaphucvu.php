@@ -97,7 +97,7 @@
                     <br>
                     <?php
                          include('../database/ketnoidatabase.php');
-                        $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 1 and 20 ;";
+                        $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes  between 9 and 17 ORDER BY RAND() ;";
                         $result = $mysqli->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -117,7 +117,7 @@
                                         <div class="button111">
                                             <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                             <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                            <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                            <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                         </div>
                                     </div>
                             </div>
@@ -167,7 +167,7 @@
                         <?php
                             include('../database/ketnoidatabase.php'); 
 
-                            $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 20 and 40 ;";
+                            $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 17 and 36 ORDER BY RAND() ;";
                             $result = $mysqli->query($sql);
 
                             if ($result->num_rows > 0) {
@@ -187,7 +187,7 @@
                                             <div class="button111">
                                                 <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                                 <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -236,7 +236,7 @@
                             <br>
                             <?php
                                include('../database/ketnoidatabase.php'); 
-                               $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 40 and 60 ;";
+                               $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 37 and 55 ORDER BY RAND();";
                                $result = $mysqli->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -256,7 +256,7 @@
                                                 <div class="button111">
                                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -305,7 +305,7 @@
                             <br>
                             <?php
                                include('../database/ketnoidatabase.php'); 
-                               $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 60 and 80 ;";
+                               $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 56 and 75 ORDER BY RAND();";
                                $result = $mysqli->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -325,7 +325,7 @@
                                                 <div class="button111">
                                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -374,7 +374,7 @@
                             <br>
                             <?php
                                 include('../database/ketnoidatabase.php'); 
-                                $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 80 and 100 ;";
+                                $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 76 and 91 ORDER BY RAND() ;";
                                 $result = $mysqli->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -394,7 +394,7 @@
                                                 <div class="button111">
                                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                                 </div>
                                             </div>
                                     </div>
