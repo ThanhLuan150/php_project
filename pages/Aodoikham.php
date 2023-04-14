@@ -89,7 +89,7 @@
                 <?php
                      include('../database/ketnoidatabase.php');
 
-                     $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 1 and 20;";
+                     $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 9 and 14;";
                      // câu truy vấn này dùng để
                     $result = $mysqli->query($sql);
                     if ($result->num_rows > 0) {
@@ -108,6 +108,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
+                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +120,7 @@
                 ?>
             </div>
         <br>
-            <button class="bt6">Xem thêm mẫu áo đối khâm  <i style="color:black" class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+            <button class="bt6"> Xem thêm mẫu áo đối khâm  <i style="color:black" class="fa-sharp fa-solid fa-cart-shopping"></i></button>
         </div>
         <br>
         <br>
@@ -138,24 +139,18 @@
         <br>
         <div class="xemthem">
             <div class="container">
-                <p class=xemthemp>Xem thêm về áo giao lĩnh</p>
+                <p class=xemthemp>Xem thêm về <?php
+                    include('../database/ketnoidatabase.php');
+                    $sql="SELECT*FROM categories where  ORDER BY RAND() ;";
+                ?></p>
             </div>
             <div class="background">
             <div class="container">
             <br>
                 <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "LISTPRODUCT";
+                   include('../database/ketnoidatabase.php');
 
-                    // Create connection
-                    $mysqli = new mysqli($servername, $username, $password, $dbname);
-                    if ($mysqli === false) {
-                        die("ERROR: Could not connect. " . $mysqli->connect_error);
-                        }
-
-                    $sql = "SELECT * FROM LISTPRODUCT WHERE names ='Áo giao lĩnh-tân niên hoài niệm';";
+                  $sql="SELECT * FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes   ORDER BY RAND() ";
                     $result = $mysqli->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -165,15 +160,16 @@
                         <?php while ($row = $result->fetch_assoc()) { ?>
                             <div class="item">
                                 <div class="image11">
-                                    <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                    <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                    <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                 <div class="button111">
-                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id"];?>">Details</a></button>  
-                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id"];?>">Đặt thuê</a></button>
+                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
+                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
+                                    <a href="#"> <i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>

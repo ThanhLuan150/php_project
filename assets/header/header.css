@@ -47,11 +47,11 @@
     margin-top: 10px;
 }
 .input{
-    border-top: none;
-    border-left:none;
-    border-right: none;
-    height: 40px;
     width: 300px;
+    height:40px;
+    border-radius: 10px;
+    border: 1px solid #EFEFEF ;
+    outline: none;
 }
 
 .button{

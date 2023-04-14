@@ -46,8 +46,10 @@
                                     <h4 class="modal-title">Tìm kiếm</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <input class="input" type="search" name="search" value="" placeholder="Nhập từ khóa">
-                                    <button class="button" type="submit" name="submit">Tìm kiếm</button>
+                                    <form method="get" action="timkiem.php">
+                                        <input class="input" type="text" name="search_query" placeholder="Nhập từ khóa tìm kiếm">
+                                        <button class="button" type="submit" name="search" >Tìm kiếm</button>
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="button" data-dismiss="modal">Close</button>
