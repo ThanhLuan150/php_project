@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <?php include('./header/header.php')
+    <?php include('header.php')
     ?>
     <div class="body">
         <div class="container">
@@ -240,7 +240,7 @@
                 </div>
             </div>
         </div>
-        <?php include('./footer/footer.php') ?>
+        <?php include('footer.php') ?>
     </div>
 
 

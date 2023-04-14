@@ -1,15 +1,9 @@
-<?php 
-include 'header.php';
-include 'footer.php'; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <style>
-       
-        
-
-    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -23,9 +17,10 @@ include 'footer.php'; ?>
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
-
+    
 </head>
-<body>      
+<body>
+<?php include('header.php') ?>
     <section class="background" id="trainers">
         <div class="container">
             <br>
@@ -72,24 +67,8 @@ include 'footer.php'; ?>
                     </div>
 
     </section>
-    <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
-    <!-- Plugins -->
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script>
-    <script src="assets/js/mixitup.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-    <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
-
+    <?php 
+        include ('footer.php') ?>    
 </body>
 
 </html>
