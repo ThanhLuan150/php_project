@@ -34,7 +34,7 @@ include 'footer.php'; ?>
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = "blog";
+            $dbname = "rent_";
 
             // Create connection
             $mysqli = new mysqli($servername, $username, $password, $dbname);

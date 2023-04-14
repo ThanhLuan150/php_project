@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Áo ngũ thân</title>
-    <link rel="stylesheet" href="../assets/footer/footer.css">
-    <link rel="stylesheet" href="../assets/header/header.css">
-    <link rel="stylesheet" href="../assets/styles/Aodoikham.css">
+    <link rel="stylesheet" href="../styles/Aodoikham.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -26,7 +24,7 @@
     </script>
 </head>
 <body>
-    <?php include('header/header.php') ?>
+    <?php include('header.php') ?>
     <div class="phucvu">
         <div class="container">
             <div class="title">
@@ -88,7 +86,7 @@
             <br>
                 <?php
                      include('../database/ketnoidatabase.php');
-                     $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 60 and 80 ;";
+                     $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 37 and 43 ORDER BY RAND();";
                     $result = $mysqli->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -108,7 +106,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +166,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -184,6 +182,6 @@
             </div>
         </div>
     </div>
-    <?php include('footer/footer.php') ?>
+    <?php include('footer.php') ?>
 </body>
 </html>

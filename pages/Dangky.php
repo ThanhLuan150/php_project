@@ -52,9 +52,7 @@ mysqli_close($conn);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/footer/footer.css">
-    <link rel="stylesheet" href="../assets/header/header.css">
-    <link rel="stylesheet" href="../assets/styles/Dangky.css">
+    <link rel="stylesheet" href="../styles/Dangky.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -67,49 +65,7 @@ mysqli_close($conn);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-    <div class="header">
-        <div class="image">
-            <a href="home.php"><img class="img" src="../img/logo.jpg" alt=""></a>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="banggiaphucvu.php">BẢNG GIÁ PHỤC VỤ</a></li>
-                <li><a href="aodoikham.php">ÁO ĐỐI KHÂM</a></li>
-                <li><a href="aogiaolinh.php">ÁO GIAO LĨNH</a></li>
-                <li><a href="aonhatbinh.php">ÁO NHẬT BÌNH</a></li>
-                <li><a href="aotac.php">ÁO TẮC</a></li>
-                <li><a href="aonguthan.php">ÁO NGŨ THÂN</a></li>
-                <li><a href="blog.php">BLOG</a></li>
-                <li><a href="lienhe.php">LIÊN HỆ</a></li>
-            </ul>
-        </div>
-        <div class="function">
-            <div class="functionsearch">
-                <div class="search">
-                    <i  class="fa-sharp fa-solid fa-magnifying-glass" data-toggle="modal" data-target="#myModal"></i>
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Tìm kiếm</h4>
-                                </div>
-                                <div class="modal-body">
-<input class="input" type="search" name="search" value="" placeholder="Nhập từ khóa">
-                                    <button class="button" type="submit" name="submit">Tìm kiếm</button>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="button" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <button class="button"><a  href="themgiohang.php">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a></button>
-                <button class="button"><a  href="Dangnhap.php">Đăng nhập</a></button>
-            </div>
-        </div>
-    </div>
+    <?php include('header.php') ?>
     <div class="background">
         <div class="container">
             <div class="dangky">
@@ -144,6 +100,6 @@ mysqli_close($conn);
             </div>
         </div>
     </div>
-    <?php include('footer/footer.php') ?>
+    <?php include('footer.php') ?>
 </body>
 </html>

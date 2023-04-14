@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -21,18 +21,18 @@
 <body>
 <div class="header">
         <div class="image">
-            <a href="home.php"><img class="img" src="../img/logo.jpg" alt=""></a>
+            <a href="../pages/Home.php"><img class="img" src="../img/logo.jpg" alt=""></a>
         </div>
         <div class="menu">
             <ul>
-                <li><a href="banggiaphucvu.php">BẢNG GIÁ PHỤC VỤ</a></li>
-                <li><a href="aodoikham.php">ÁO ĐỐI KHÂM</a></li>
-                <li><a href="aogiaolinh.php">ÁO GIAO LĨNH</a></li>
-                <li><a href="aonhatbinh.php">ÁO NHẬT BÌNH</a></li>
-                <li><a href="aotac.php">ÁO TẮC</a></li>
-                <li><a href="aonguthan.php">ÁO NGŨ THÂN</a></li>
-                <li><a href="blog.php">BLOG</a></li>
-                <li><a href="lienhe.php">LIÊN HỆ</a></li>
+                <li><a href="../pages/Banggiaphucvu.php">BẢNG GIÁ PHỤC VỤ</a></li>
+                <li><a href="../pages/Aodoikham.php">ÁO ĐỐI KHÂM</a></li>
+                <li><a href="../pages/Aogiaolinh.php">ÁO GIAO LĨNH</a></li>
+                <li><a href="../pages/Aonhatbinh.php">ÁO NHẬT BÌNH</a></li>
+                <li><a href="../pages/Aotac.php">ÁO TẮC</a></li>
+                <li><a href="../pages/Aonguthan.php">ÁO NGŨ THÂN</a></li>
+                <li><a href="../pages/Blog.php">BLOG</a></li>
+                <li><a href="../pages/Lienhe.php">LIÊN HỆ</a></li>
             </ul>
         </div>
         <div class="function">
@@ -46,7 +46,7 @@
                                     <h4 class="modal-title">Tìm kiếm</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="get" action="timkiem.php">
+                                    <form method="get" action="../Function/timkiem.php">
                                         <input class="input" type="text" name="search_query" placeholder="Nhập từ khóa tìm kiếm">
                                         <button class="button" type="submit" name="search" >Tìm kiếm</button>
                                     </form>
@@ -60,7 +60,7 @@
                 </div>
             </div>
                 <button class="button"><a  href="themgiohang.php">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a></button>
-                <button class="button"><a  href="Dangnhap.php">Đăng nhập</a></button>
+                <button class="button"><a  href="../pages/Dangnhap.php">Đăng nhập</a></button>
             </div>
         </div>
     </div>

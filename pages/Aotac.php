@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Áo tấc</title>
-    <link rel="stylesheet" href="../assets/footer/footer.css">
-    <link rel="stylesheet" href="../assets/header/header.css">
-    <link rel="stylesheet" href="../assets/styles/Aodoikham.css">
+    <link rel="stylesheet" href="../styles/Aodoikham.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -26,7 +24,7 @@
     </script>
 </head>
 <body>
-    <?php include('header/header.php') ?>
+    <?php include('header.php') ?>
     <div class="phucvu">
         <div class="container">
             <div class="title">
@@ -88,7 +86,8 @@
             <br>
                 <?php
                      include('../database/ketnoidatabase.php');
-                     $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 60 and 80 ;";
+                     $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 56 and 63 ORDER BY RAND();";
+                     $result = $mysqli->query($sql);
                     $result = $mysqli->query($sql);
                     if ($result->num_rows > 0) {
                     // output data of each row
@@ -107,7 +106,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"  href="detail1.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -157,17 +156,17 @@
                         <?php while ($row = $result->fetch_assoc()) { ?>
                             <div class="item">
                                 <div class="image11">
-                                    <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                    <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                    <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
                                     <button class="bt2"><a class="a1"  href="detail1.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -183,6 +182,6 @@
             </div>
         </div>
     </div>
-    <?php include('footer/footer.php') ?>
+    <?php include('footer.php') ?>
 </body>
 </html>

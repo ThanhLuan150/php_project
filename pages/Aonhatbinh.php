@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Áo nhật bình</title>
-    <link rel="stylesheet" href="../assets/footer/footer.css">
-    <link rel="stylesheet" href="../assets/header/header.css">
-    <link rel="stylesheet" href="../assets/styles/Aonhatbinh.css">
+    <link rel="stylesheet" href="../styles/Aonhatbinh.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -26,7 +24,7 @@
     </script>
 </head>
 <body>
-    <?php include('header/header.php') ?>
+    <?php include('header.php') ?>
     <div class="phucvu">
         <div class="container">
             <div class="title">
@@ -185,7 +183,7 @@
         </div>
     </div>
     <?php
-        include('footer/footer.php')
+        include('footer.php')
     ?>
 </body>
 </html>

@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bảng giá phục vụ</title>
-    <link rel="stylesheet" href="../assets/footer/footer.css">
-    <link rel="stylesheet" href="../assets/header/header.css">
+    <link rel="stylesheet" href="../styles/Banggiaphucvu.css">
     <link rel="stylesheet" href="../assets/styles/Banggiaphucvu.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
@@ -21,7 +20,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <?php include('header/header.php')?>
+    <?php include('header.php')?>
     <div class="phucvu">
         <div class="title">
             <p class="titlep1">Bảng Giá Dịch Vụ Thuê Áo Dài</p>
@@ -117,7 +116,7 @@
                                         <div class="button111">
                                             <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                             <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                            <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                            <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                         </div>
                                     </div>
                             </div>
@@ -187,7 +186,7 @@
                                             <div class="button111">
                                                 <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                                 <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -203,7 +202,7 @@
                 </div>
                     <br>
                     <div class="container">
-                        <p class="gioithieu2">3. Bảng giá dịch vụ cho thuê áo nhật bình nam nữ TTDVL</p>
+                        <p class="gioithieu2">3. Bảng giá dịch vụ cho thuê áo ngũ thân nam nữ TTDVL</p>
                         <p class="gioithieu1">» Bảng giá dịch vụ thuê áo nhật bình  : Giá  300,000 / bộ , giá thuê 2 bộ , giá thuê 250,000 / Bộ.</p>
                     </div>
                     <br>
@@ -256,7 +255,7 @@
                                                 <div class="button111">
                                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -268,7 +267,7 @@
                             ?>
                         </div>
                         <br>
-                        <button class="bt6">Xem thêm mẫu áo nhật bình  <i style="color:black" class="fa-sharp fa-solid fa-cart-shopping"></i></button>
+                        <button class="bt6">Xem thêm mẫu áo ngũ thân  <i style="color:black" class="fa-sharp fa-solid fa-cart-shopping"></i></button>
                     </div>
                     <br>
                     <div class="container">
@@ -325,7 +324,7 @@
                                                 <div class="button111">
                                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -341,8 +340,8 @@
                     </div>
                     <br>
                     <div class="container">
-                        <p class="gioithieu2">5. Bảng giá dịch vụ cho thuê áo ngũ thân nam nữ TTDVL</p>
-                        <p class="gioithieu1">» Bảng giá dịch vụ thuê áo ngũ thân  : Giá  150,000 / bộ , giá thuê 2 bộ , giá thuê 125,000 / Bộ.</p>
+                        <p class="gioithieu2">5. Bảng giá dịch vụ cho thuê áo nhật bình nam nữ TTDVL</p>
+                        <p class="gioithieu1">» Bảng giá dịch vụ thuê áo nhật bình  : Giá  150,000 / bộ , giá thuê 2 bộ , giá thuê 125,000 / Bộ.</p>
                     </div>
                     <br>
                     <div class="bang">
@@ -394,7 +393,7 @@
                                                 <div class="button111">
                                                     <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                                 </div>
                                             </div>
                                     </div>
@@ -461,6 +460,6 @@
         </div>
     </div>
     </div>
-    <?php include('footer/footer.php') ?>
+    <?php include('footer.php') ?>
 </body>
 </html>
