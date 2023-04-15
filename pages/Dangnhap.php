@@ -1,38 +1,40 @@
-
 <?php
-    error_reporting(0);
-    function alert($mes){
-        echo "<script> alert('$mes');</script>";
+  // Thông tin đăng nhập cơ sở dữ liệu MySQL
+
+
+  // Kết nối đến cơ sở dữ liệu MySQL
+  include_once '../database/ketnoidatabase.php';
+
+  // Kiểm tra kết nối
+  if (mysqli_connect_errno()) {
+    die("Không thể kết nối đến cơ sở dữ liệu MySQL: " . mysqli_connect_error());
+  }
+
+  // Xử lý thông tin đăng nhập
+  if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Lấy thông tin người dùng từ cơ sở dữ liệu
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = mysqli_query($mysqli, $sql);
+    // Kiểm tra xem có người dùng nào khớp với thông tin đăng nhập hay không
+    if (mysqli_num_rows($result)>=1) {
+      // Đăng nhập thành công
+      session_start();
+      $_SESSION["username"] = $username;
+      header("Location: Home.php");
+    } else {
+      // Đăng nhập không thành công
+      $error = "Tên đăng nhập hoặc mật khẩu không đúng.";
     }
-    // Connect to the database
-    $conn = mysqli_connect("localhost", "root", "", "rent_clothes");
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+  }
 
-    // Check if the login form has been submitted
-    if(isset($_POST['submit'])){
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        $password = md5($password);
-
-        // Escape the input to prevent SQL injection attacks
-        $username = mysqli_real_escape_string($conn, $username);
-        $password = mysqli_real_escape_string($conn, $password);
-
-        // Query the database to check if the username and password are correct
-        $sql = "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password'";
-        $result = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_assoc($result);
-
-        // Check if a row was returned
-        if (!empty($row)) {
-            echo "<script>alert('Đăng nhập thành công')</script>";
-        } else {
-            echo "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng')</script>";
-        }
-    }
+  // Đóng kết nối đến cơ sở dữ liệu MySQL
+  mysqli_close($mysqli );
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,16 +61,16 @@
         <div class="container">
             <div class="dangky">
                 <div class="dangky1">
-                    <form action="dangky.php" method="post">
+                    <form action="dangnhap.php" method="post">
                         <p class="dangkyp">ĐĂNG NHẬP</p>
                         <br> <br>
                         <div class="name">
                             <i class="fa-solid fa-user" style="position:relative;left:20px;"></i>
-                            <input id="search" type="text" class="input" name="username" placeholder="Tên đăng nhập"  required value="<?php echo  $_POST['username']; ?>">
+                            <input id="search" type="text" class="input" name="username" placeholder="Tên đăng nhập"  required >
                         </div> <br>
                         <div class="name">
                             <i class="fa-solid fa-lock" style="position:relative;left:20px;"></i>
-                            <input id="search" type="password" class="input" name="password" placeholder=" Mật khẩu"  required value="<?php echo  $_POST['password']; ?>">
+                            <input id="search" type="password" class="input" name="password" placeholder=" Mật khẩu"  required>
                         </div> <br> <br>
                         <p class="dangkyp2" ><input type="checkbox">Nhớ mật khẩu</p> <br>
                         <button type="submit" name="submit" class="button1">Đăng nhập</button> <br> <br> <br> <br>
