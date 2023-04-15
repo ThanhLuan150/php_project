@@ -181,6 +181,10 @@
 
     color: #000000;
     }
+    .filter{
+        display:flex;
+        gap:15px;
+    }
 
     .title{
         font-family: 'Inter';

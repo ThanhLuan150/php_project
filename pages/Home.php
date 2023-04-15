@@ -82,8 +82,14 @@
         <div class="container">
             <br>
             <br>
+            <div class="filter">
+                <button type="submit" name ="">Áo đối khâm</button>
+                <button type="submit">Áo giao lĩnh</button>
+                <button type="submit">Áo nhật bình</button>
+                <button type="submit">Áo tấc</button>
+                <button type="submit">Áo ngũ thân</button>
+            </div>
             <p class="backgroundp1">Áo Đối Khẩm</p>
-            <?php include('../database/ketnoidatabase.php'); ?>
             <?php
             include('../database/ketnoidatabase.php');
             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 9 and 17 ORDER BY RAND();";

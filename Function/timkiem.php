@@ -38,7 +38,7 @@
                     $search_query = $_GET['search_query'];
 
                     // Tìm kiếm dữ liệu trong cơ sở dữ liệu
-                    $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories where name_clothes    LIKE '%$search_query%'";
+                    $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories where name_clothes     LIKE '%$search_query%'ORDER BY RAND();";
                     $result = $mysqli->query($sql);
 
                     // Hiển thị kết quả tìm kiếm
