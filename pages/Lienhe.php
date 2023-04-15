@@ -28,7 +28,7 @@
         <div class="container-boy">
             <h1 class="element-title">LIÊN HỆ</h1>
             <div class="title2">
-                <a class="title-name" href="Hom.php">Home /</a> 
+                <a class="title-name" href="Home.php">Home /</a> 
                 <span class="current">LIÊN HỆ</span>
             </div>																	
         </div>
@@ -48,7 +48,7 @@
             </div>
 
                     <div class="content-fromt">
-                        <form>
+                        <form action="lienhe.php" method="post">
                             <label for="fname">Tên của bạn </label><br>
                             <input style="width:900px" type="text"  id="fname" name="fname"><br><br>
                             <label for="fname">Email</label><br>
@@ -56,10 +56,10 @@
                             <label for="fname">Số điệnthoại</label><br>
                             <input style="width:900px" type="text"  id="sdt" name="sdt"><br><br>
                             <label for="fname">Nội dung</label><br>
-                            <textarea style="width:900px" name="" id="" cols="30" rows="10"></textarea> <br><br>
+                            <textarea style="width:900px" name="message" id="" cols="30" rows="10"></textarea> <br><br>
 
-                             <input type="button" class="button-fromt" value="Gửi nội dung">
-                        </form>
+                             <input type="button" class="button-fromt" name="submit" value="Gửi nội dung">
+                        </form><br>
                         <h2 class="h2chiduong">CHỈ ĐƯỜNG ĐI ĐẾN ÁO CỔ PHỤC TTDVL</h2>
                         <div class="wpb_map_wraper"><iframe style="width:900px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.1122480382614!2d108.23859831416979!3d16.05966394396151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142177f0057f675%3A0xdec5dbe31838c835!2zMzY1UitWOUcsIDEwMUIgTMOqIEjhu691IFRyw6FjLCBQaMaw4bubYyBN4bu5LCBTxqFuIFRyw6AsIMSQw6AgTuG6tW5nIDU1MDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1680865040827!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                     </div>

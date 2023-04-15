@@ -1,49 +1,58 @@
 <?php 
 error_reporting(0);
-function alert($mes){
-    echo "<script> alert('$mes');</script>";
+function alert($message){
+    echo "<script> alert('$message');</script>";
 }
-   // Kết nối CSDL
-$conn = mysqli_connect("localhost","root","","ren_cothes");
+include_once '../database/ketnoidatabase.php';
+
+
+
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $confirm_password =$_POST['confirm_password'];
-    $a=0;
-    if ( $password !=  $confirm_password ){
-    //    header("location:dangky.php");
-        alert("password not the same");
+    $confirm_password = $_POST['confirm_password'];
+
+    $a = 0;
+
+    if ($password != $confirm_password){
+        alert("Passwords do not match.");
         $a++;
     }
-    // Kiểm tra tính hợp lệ của email và mật khẩu
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        alert("wrong email");
+        alert("Invalid email format.");
         $a++;
     }
     if (strlen($password) < 6) {
-        // header("location:dangky.php");
-        alert("need length password");
+        alert("Password must be at least 6 characters long.");
         $a++;
     }
-    if(!$a){
+
+    $query_check = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
+    $result_check = mysqli_query($mysqli, $query_check);
+    if(mysqli_num_rows($result_check) > 0){
+        alert("Username or email already exists.");
+        $a++;
+    }
+    if($a == 0){
         $date = date('m/d/Y h:i:s a', time());
-        $result= mysqli_query($conn,"INSERT INTO `users`(`username`, `email`, `password`, `confirm_password`, `created_at`) VALUES ('$username','$email','$password','$confirm_password','$date')");
+        $result= mysqli_query($mysqli,"INSERT INTO `users`(`username`, `email`, `password`, `confirm_password`, `created_at`) VALUES ('$username','$email','$password','$confirm_password','$date')");
 
         if($result){
             header("Location:Home.php");
-            die();
+            // die();
         } else {
-            alert("Failed to insert user information");
+            alert("Failed to insert user information.");
         }
     } else {
-        alert("Errors occurred while processing form.");
+        alert("Errors occurred while processing the form.");
     }
 }
 
-mysqli_close($conn);
-    
+// Close the database connection
+mysqli_close($mysqli);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +76,8 @@ mysqli_close($conn);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<?php include('header/header.php') ?>
+    <body>
+    <?php include('header/header.php') ?>
     <div class="background">
         <div class="container">
             <div class="dangky">
@@ -103,5 +113,5 @@ mysqli_close($conn);
         </div>
     </div>
     <?php include('footer/footer.php') ?>
-</body>
+    </body>
 </html>
