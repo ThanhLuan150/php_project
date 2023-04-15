@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
         alert("Invalid email format.");
         $a++;
     }
-    if (strlen($password) <7) {
+    if (strlen($password) < 6) {
         alert("Password must be at least 6 characters long.");
         $a++;
     }
