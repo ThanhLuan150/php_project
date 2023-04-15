@@ -42,9 +42,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/footer/footer.css">
-    <link rel="stylesheet" href="../assets/header/header.css">
-    <link rel="stylesheet" href="../assets/styles/Dangnhap.css">
+    <link rel="stylesheet" href="../styles/Dangnhap.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -58,7 +56,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <?php include('header/header.php') ?>
+    <?php include('header.php') ?>
     <div class="background">
         <div class="container">
             <div class="dangky">
@@ -81,11 +79,11 @@
                 </div>
                 <div class="img">
                     <img class="img1" src="../img/content.jpg" alt="">
-                    <a class="imga" href="Dangky.php">Tạo tài khoản</a>
+                    <a class="imga" href="../pages/Dangky.php">Tạo tài khoản</a>
                 </div>
             </div>
         </div>
     </div>
-    <?php include('footer/footer.php') ?>
+    <?php include('footer.php') ?>
 </body>
 </html>

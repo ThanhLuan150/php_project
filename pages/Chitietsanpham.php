@@ -4,9 +4,7 @@
   <title>Detail</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../assets/footer/footer.css">
-  <link rel="stylesheet" href="../assets/header/header.css">
-  <link rel="stylesheet" href="../assets/styles/Chitietsanpham.css">
+  <link rel="stylesheet" href="../styles/Chitietsanpham.css">
   <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
   <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
   <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -19,112 +17,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<style>
-    .noiquyp1{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 27px;
-    color: #FF0000;
-}
-.noiquy2 ul{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #000000;
-}
-.background{
-    background: #EFEFEF;
-    padding-bottom: 30px;
-    }
-    .backgroundp1{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-
-    color: #000000;
-    }
-    .listproductssp1{
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 22px;
-      line-height: 27px;
-
-      color: #000000;
-
-    }
-
-    .title{
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 29px;
-        color: #000000;
-        }
-
-    .list_schools{
-            display: grid ;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap:30px;
-            list-style-type:none;
-    }
-    .item{
-        background: #fff;
-        border-radius: 10px 10px 10px 10px;
-    }
-    .img4{
-        Width:262px;
-        Height:290px;
-        border-radius: 10px 10px 0 0 ;
-    }
-    .informationproductp1{
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        color: #000000;
-        margin-left: 13px;
-    }
-    .informationproductp2{
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        color: #ED2353;
-        margin-left: 13px;
-    }
-    .button111{
-        margin-bottom:20px;
-        margin-left: 13px;
-    }
-    .bt2{
-        background: #F2DFE3;
-        border-radius: 20px;
-        border: 1px solid  #F2DFE3 ;
-        height:30px;
-        width: 100px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-       
-    }
-    .a1{
-        color: #000000;
-    }
-</style>
 <body>
-    <?php include('header/header.php') ?>
+    <?php include('header.php') ?>
     <div class="body">
       <div class="container">
         <?php
@@ -273,6 +167,6 @@
       </div>
     </div>
     </div>
-    <?php include('footer/footer.php') ?>
+    <?php include('footer.php') ?>
   </body>
 </html>

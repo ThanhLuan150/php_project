@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../assets/styles/Lienhe.css">
-    <link rel="stylesheet" href="../assets/footer/footer.css">
-    <link rel="stylesheet" href="../assets/header/header.css">
-
-
+    <link rel="stylesheet" href="../styles/Lienhe.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -23,7 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-        <?php include('header/header.php') ?>
+        <?php include('header.php') ?>
 
         <div class="container-boy">
             <h1 class="element-title">LIÊN HỆ</h1>
@@ -66,7 +62,7 @@
             </div>
             </div>
     
-   <?php include('footer/footer.php') ?>
+   <?php include('footer.php') ?>
 
        
        
