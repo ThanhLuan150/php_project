@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     }
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         alert("Invalid email format.");
-        $a++;
+        $a++; 
     }
     if (strlen($password) < 7) {
         alert("Password must be at least 6 characters long.");
@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
         $result= mysqli_query($mysqli,"INSERT INTO `users`(`username`, `email`, `password`, `confirm_password`, `created_at`) VALUES ('$username','$email','$password','$confirm_password','$date')");
 
         if($result){
-            header("Location:Home.php");
+            header("Location:Dangnhap.php");
             // die();
         } else {
             alert("Failed to insert user information.");
@@ -61,9 +61,7 @@ mysqli_close($mysqli);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/footer/footer.css">
-    <link rel="stylesheet" href="../assets/header/header.css">
-    <link rel="stylesheet" href="../assets/styles/Dangky.css">
+    <link rel="stylesheet" href="../styles/Dangky.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
