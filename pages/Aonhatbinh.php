@@ -106,7 +106,7 @@
                                 <div class="button111">
                                     <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -156,17 +156,17 @@
                         <?php while ($row = $result->fetch_assoc()) { ?>
                             <div class="item">
                                 <div class="image11">
-                                    <img class="img4" src="<?php echo $row["img"]; ?>" alt="">
+                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
                                 </div>
                                 <br>
                                 <div class="informationproduct">
-                                    <p class="informationproductp1"><?php echo $row["names"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["price"]; ?></p>
+                                    <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
+                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                 <div class="button111">
                                     <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
                                     <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_carts"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
                                     </div>
                                 </div>
                             </div>

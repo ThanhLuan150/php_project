@@ -19,6 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+   
     <?php
     include '../pages/header.php';
     ?>
@@ -38,7 +39,7 @@
                     $search_query = $_GET['search_query'];
 
                     // Tìm kiếm dữ liệu trong cơ sở dữ liệu
-                    $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories where name_clothes     LIKE '%$search_query%'ORDER BY RAND();";
+                    $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories where name_clothes LIKE '%$search_query%' or rent_prices LIKE '%$search_query%' or sex LIKE '%$search_query%' ;";
                     $result = $mysqli->query($sql);
 
                     // Hiển thị kết quả tìm kiếm
@@ -56,6 +57,7 @@
                                         <div class="informationproduct">
                                             <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                             <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
+                                            <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                         <div class="button111">
                                             <button class="bt2"><a class="a1"  href="detail.php?id=<?php echo $row["id_clothes"];?>">Detail</a></button>  
                                             <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>

@@ -82,14 +82,13 @@
         <div class="container">
             <br>
             <br>
-            <select class="form-control" name="id_categories">
+            <select class="input" name="id_categories">
               <?php
                 include('../database/ketnoidatabase.php');
                 $sql="SELECT*FROM  categories";
                 $query=mysqli_query($mysqli,$sql);
                 while($row_cate = mysqli_fetch_assoc($query)){?>
                     <option value="<?php echo $row_cate['id_categories'];?>"><?php echo $row_cate['name_categories'];?></option>
-
 
                 <?php }?>
           </select>
