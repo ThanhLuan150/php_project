@@ -82,13 +82,17 @@
         <div class="container">
             <br>
             <br>
-            <div class="filter">
-                <button type="submit" name ="">Áo đối khâm</button>
-                <button type="submit">Áo giao lĩnh</button>
-                <button type="submit">Áo nhật bình</button>
-                <button type="submit">Áo tấc</button>
-                <button type="submit">Áo ngũ thân</button>
-            </div>
+            <select class="form-control" name="id_categories">
+              <?php
+                include('../database/ketnoidatabase.php');
+                $sql="SELECT*FROM  categories";
+                $query=mysqli_query($mysqli,$sql);
+                while($row_cate = mysqli_fetch_assoc($query)){?>
+                    <option value="<?php echo $row_cate['id_categories'];?>"><?php echo $row_cate['name_categories'];?></option>
+
+
+                <?php }?>
+          </select>
             <p class="backgroundp1">Áo Đối Khẩm</p>
             <?php
             include('../database/ketnoidatabase.php');
