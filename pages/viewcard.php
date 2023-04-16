@@ -1,7 +1,7 @@
 
 
 
-<?php include '..\Trangchu\header.php';
+<?php include 'header.php';
      
    
 
@@ -35,13 +35,14 @@ $cart=(isset($_SESSION['cart']))? $_SESSION['cart'] : [];
                             <?php foreach ($cart as $key => $value):
                             $total_price += (($value['rent_prices']+ $value['tiencoc']) * $value['quantity'] )
                              ?>
-                            <tr>
+                            <tr id='cart-<?= $value['id'] ?>'>
                                 <td><?php echo $key ++ ; ?></td>
                                 <td><img src=" <?php echo $value['image']?>" width="100px"></td>
                                 <td><?php echo $value['name'] ?></td>
                                 <td width="300px"> 
                                     <form action="cart.php">
                                         <input type="hidden" name="action" value="update" >
+                                        <input type="number" name="rent-price" id="rent-price" value="<?=$value['rent_prices']?>">
                                         <input type="hidden" name="id" value="<?= $value['id'] ?>">
                                         <input type="number" name="quantity" value="<?php echo $value['quantity'] ?>">
                                         <button type="submit">Cập nhật</button></input> 
@@ -101,10 +102,11 @@ $cart=(isset($_SESSION['cart']))? $_SESSION['cart'] : [];
 
 
 
-<?php include '..\Trangchu\footer.php' ?>;
+<?php include 'footer.php' ?>;
 
 <script>
      function del(name){
         return confirm("Bạn có chắc chắn muốn xoa sản phẩm:"+ name + " ?")
     }
+
 </script>

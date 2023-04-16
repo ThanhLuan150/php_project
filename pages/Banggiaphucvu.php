@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bảng giá phục vụ</title>
-    <link rel="stylesheet" href="../styles/Banggiaphucvu.css">
-    <link rel="stylesheet" href="../assets/styles/Banggiaphucvu.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="Banggiaphucvu.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -18,9 +22,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+</style>
 </head>
 <body>
+    <?php require_once ('../admin/db.php'); 
+  
+    ?>
+
+   
+    <header>
     <?php include('header.php')?>
+    </header>
     <div class="phucvu">
         <div class="title">
             <p class="titlep1">Bảng Giá Dịch Vụ Thuê Áo Dài</p>
@@ -95,8 +109,9 @@
                 <div class="container">
                     <br>
                     <?php
-                         include('../database/ketnoidatabase.php');
-                        $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes  between 9 and 17 ORDER BY RAND() ;";
+                  
+                       
+                        $sql = "SELECT * FROM categories inner join clothes on clothes.id_categories=categories.id_categories WHERE categories.id_categories =5;";
                         $result = $mysqli->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -112,11 +127,9 @@
                                     <div class="informationproduct">
                                         <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                         <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
-                                        <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                         <div class="button111">
-                                            <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                            <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                            <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                            <button class="bt2"><a class="a1" href="banggiaphucvu.php?id=<?php echo $row['id_clothes']; ?>">Details</a></button>  
+                                            <button class="bt2"><a class="a1" href="cart.php?id=<?php echo $row['id_clothes']; ?>">Thêm </a></button>
                                         </div>
                                     </div>
                             </div>
@@ -124,7 +137,7 @@
                         } else {
                             echo "Không có kết quả để hiển thị ra";
                         }
-                        $mysqli->close();
+                       
                     ?>
                 </div>
                 <br>
@@ -164,29 +177,25 @@
                     <div class="container">
                         <br>
                         <?php
-                            include('../database/ketnoidatabase.php'); 
+                        $sql2 = "SELECT * FROM categories inner join clothes on clothes.id_categories=categories.id_categories WHERE categories.id_categories =3;";
+                        $result2 = $mysqli->query($sql2);
 
-                            $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 17 and 36 ORDER BY RAND() ;";
-                            $result = $mysqli->query($sql);
-
-                            if ($result->num_rows > 0) {
+                            if ($result2->num_rows > 0) {
                                 // output data of each row
                             ?>
                             <div class="list_schools">
-                                <?php while ($row = $result->fetch_assoc()) { ?>
+                                <?php while ($row2 = $result2->fetch_assoc()) { ?>
                                         <div class="item">
                                             <div class="image11">
-                                                <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
+                                                <img class="img4" src="<?php echo $row2["image"]; ?>" alt="">
                                             </div>
                                             <br>
                                             <div class="informationproduct">
-                                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
-                                                <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
-                                                <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
+                                                <p class="informationproductp1"><?php echo $row2["name_clothes"]; ?></p>
+                                                <p class="informationproductp2"><?php echo $row2["rent_prices"]; ?></p>
                                             <div class="button111">
-                                                <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                                <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                <button class="bt2"><a class="a1" href="chitietsanpham.php?id=<?php echo $row2['id_clothes']; ?>">Details</a></button>  
+                                                <button class="bt2"><a class="a1" href="cart.php?id=<?php echo $row2['id_clothes']; ?>">Thêm </a></button>
                                             </div>
                                         </div>
                                     </div>
@@ -194,7 +203,7 @@
                             } else {
                                 echo "Không có kết quả để hiển thị ra";
                             }
-                            $mysqli->close();
+                           
                         ?>
                     </div>
                     <br>
@@ -202,7 +211,7 @@
                 </div>
                     <br>
                     <div class="container">
-                        <p class="gioithieu2">3. Bảng giá dịch vụ cho thuê áo ngũ thân nam nữ TTDVL</p>
+                        <p class="gioithieu2">3. Bảng giá dịch vụ cho thuê áo nhật bình nam nữ TTDVL</p>
                         <p class="gioithieu1">» Bảng giá dịch vụ thuê áo nhật bình  : Giá  300,000 / bộ , giá thuê 2 bộ , giá thuê 250,000 / Bộ.</p>
                     </div>
                     <br>
@@ -234,28 +243,27 @@
                         <div class="container">
                             <br>
                             <?php
-                               include('../database/ketnoidatabase.php'); 
-                               $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 37 and 55 ORDER BY RAND();";
-                               $result = $mysqli->query($sql);
+                              
 
-                                if ($result->num_rows > 0) {
+                              $sql1 = "SELECT * FROM categories inner join clothes on clothes.id_categories=categories.id_categories WHERE categories.id_categories =4;";
+                              $result1 = $mysqli->query($sql1);
+
+                                if ($result1->num_rows > 0) {
                                     // output data of each row
                                 ?>
                                 <div class="list_schools">
-                                    <?php while ($row = $result->fetch_assoc()) { ?>
+                                    <?php while ($row1 = $result1->fetch_assoc()) { ?>
                                             <div class="item">
                                                 <div class="image11">
-                                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
+                                                    <img class="img4" src="<?php echo $row1["image"]; ?>">
                                                 </div>
                                                 <br>
                                                 <div class="informationproduct">
-                                                    <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
-                                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
-                                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
+                                                    <p class="informationproductp1"><?php echo $row1["name_clothes"]; ?></p>
+                                                    <p class="informationproductp2"><?php echo $row1["rent_prices"]; ?></p>
                                                 <div class="button111">
-                                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                    <button class="bt2" ><a class="a1" href="chitietsanpham.php?id=<?php echo $row1['id_clothes']; ?>">Details</a></button>  
+                                                    <button class="bt2"><a class="a1" href="cart.php?id=<?php echo $row1['id_clothes']; ?>">Thêm </a></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -263,12 +271,11 @@
                                 } else {
                                     echo "Không có kết quả để hiển thị ra";
                                 }
-                                $mysqli->close();
+               
                             ?>
                         </div>
                         <br>
-                        <button class="bt6">Xem thêm mẫu áo ngũ thân  <i style="color:black" class="fa-sharp fa-solid fa-cart-shopping"></i></button>
-                    </div>
+                        <button class="bt6">Xem thêm mẫu áo nhật bình  <i style="color:black" class="fa-sharp fa-solid fa-cart-shopping"></i></button></div>
                     <br>
                     <div class="container">
                         <p class="gioithieu2">4. Bảng giá dịch vụ cho thuê áo tấc nam nữ TTDVL</p>
@@ -303,9 +310,11 @@
                         <div class="container">
                             <br>
                             <?php
-                               include('../database/ketnoidatabase.php'); 
-                               $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 56 and 75 ORDER BY RAND();";
-                               $result = $mysqli->query($sql);
+                       
+
+                                $sql = "SELECT * FROM categories inner join clothes on clothes.id_categories=categories.id_categories WHERE categories.id_categories =2;";
+
+                                $result = $mysqli->query($sql);
 
                                 if ($result->num_rows > 0) {
                                     // output data of each row
@@ -320,11 +329,9 @@
                                                 <div class="informationproduct">
                                                     <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
-                                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                                 <div class="button111">
-                                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                    <button class="bt2"><a class="a1" href="chitietsanpham.php?id=<?php echo $row['id_clothes']; ?>">Details</a></button>  
+                                                    <button class="bt2"><a class="a1" href="cart.php?id=<?php echo $row['id_clothes']; ?>">Thêm </a></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -332,7 +339,7 @@
                                 } else {
                                     echo "Không có kết quả để hiển thị ra";
                                 }
-                                $mysqli->close();
+                               
                             ?>
                         </div>
                         <br>
@@ -340,8 +347,8 @@
                     </div>
                     <br>
                     <div class="container">
-                        <p class="gioithieu2">5. Bảng giá dịch vụ cho thuê áo nhật bình nam nữ TTDVL</p>
-                        <p class="gioithieu1">» Bảng giá dịch vụ thuê áo nhật bình  : Giá  150,000 / bộ , giá thuê 2 bộ , giá thuê 125,000 / Bộ.</p>
+                        <p class="gioithieu2">5. Bảng giá dịch vụ cho thuê áo ngũ thân nam nữ TTDVL</p>
+                        <p class="gioithieu1">» Bảng giá dịch vụ thuê áo ngũ thân  : Giá  150,000 / bộ , giá thuê 2 bộ , giá thuê 125,000 / Bộ.</p>
                     </div>
                     <br>
                     <div class="bang">
@@ -372,8 +379,10 @@
                         <div class="container">
                             <br>
                             <?php
-                                include('../database/ketnoidatabase.php'); 
-                                $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 76 and 91 ORDER BY RAND() ;";
+                               
+
+                               $sql = "SELECT * FROM categories inner join clothes on clothes.id_categories=categories.id_categories WHERE categories.id_categories =1;";
+
                                 $result = $mysqli->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -389,11 +398,9 @@
                                                 <div class="informationproduct">
                                                     <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
-                                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                                 <div class="button111">
-                                                    <button class="bt2"><a class="a1"  href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                                                    <button class="bt2"><a class="a1" href="chitietsanpham.php?id=<?php echo $row['id_clothes']; ?>">Details</a></button>  
+                                                    <button class="bt2"><a class="a1" href="cart.php?id=<?php echo $row['id_clothes']; ?>">Thêm </a></button>
                                                 </div>
                                             </div>
                                     </div>
@@ -460,6 +467,6 @@
         </div>
     </div>
     </div>
-    <?php include('footer.php') ?>
+   <footer> <?php include('footer.php') ?></footer>
 </body>
 </html>

@@ -1,7 +1,7 @@
 
 
-<?php include_once '..\db.php';
-include '..\header.php';
+<?php include_once '../Admin/db.php';
+include 'header.php';
 
 $cart=(isset($_SESSION['cart']))? $_SESSION['cart'] : [];
 
@@ -140,12 +140,12 @@ $cart=(isset($_SESSION['cart']))? $_SESSION['cart'] : [];
 <?php }else {?>
 <div class="alert alert-danger">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <strong>Vui lòng đăng nhập để mua hàng!</strong><a href="../login_register/login.php?action=oders">Login </a>
+  <strong>Vui lòng đăng nhập để mua hàng!</strong><a href="login.php?action=oders">Login </a>
 </div>
 
 <?php }?>
 
-<?php include '..\Trangchu\footer.php' ?>;
+<?php include 'footer.php' ?>;
 
 <script>
      function del(name){

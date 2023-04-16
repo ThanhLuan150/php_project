@@ -19,20 +19,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<?php 
+include_once '../admin/db.php';
+    session_start();
+  $users=(isset($_SESSION['user']))?$_SESSION['user']: [];
+ 
+  ?>
 <div class="header">
         <div class="image">
-            <a href="../pages/Home.php"><img class="img" src="../img/logo.jpg" alt=""></a>
+            <a href="home.php"><img class="img" src="../img/logo.jpg" alt=""></a>
         </div>
         <div class="menu">
             <ul>
-                <li><a href="../pages/Banggiaphucvu.php">BẢNG GIÁ PHỤC VỤ</a></li>
-                <li><a href="../pages/Aodoikham.php">ÁO ĐỐI KHÂM</a></li>
-                <li><a href="../pages/Aogiaolinh.php">ÁO GIAO LĨNH</a></li>
-                <li><a href="../pages/Aonhatbinh.php">ÁO NHẬT BÌNH</a></li>
-                <li><a href="../pages/Aotac.php">ÁO TẮC</a></li>
-                <li><a href="../pages/Aonguthan.php">ÁO NGŨ THÂN</a></li>
-                <li><a href="../pages/Blog.php">BLOG</a></li>
-                <li><a href="../pages/Lienhe.php">LIÊN HỆ</a></li>
+                <li><a href="home.php">BẢNG GIÁ PHỤC VỤ</a></li>
+                <li><a href="aodoikham.php">ÁO ĐỐI KHÂM</a></li>
+                <li><a href="aogiaolinh.php">ÁO GIAO LĨNH</a></li>
+                <li><a href="aonhatbinh.php">ÁO NHẬT BÌNH</a></li>
+                <li><a href="aotac.php">ÁO TẮC</a></li>
+                <li><a href="aonguthan.php">ÁO NGŨ THÂN</a></li>
+                <li><a href="blog.php">BLOG</a></li>
+                <li><a href="lienhe.php">LIÊN HỆ</a></li>
             </ul>
         </div>
         <div class="function">
@@ -46,7 +52,7 @@
                                     <h4 class="modal-title">Tìm kiếm</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="get" action="../Function/timkiem.php">
+                                <form method="get" action="../Function/timkiem.php">
                                         <input class="input" type="text" name="search_query" placeholder="Nhập từ khóa tìm kiếm">
                                         <button class="button" type="submit" name="search" >Tìm kiếm</button>
                                     </form>
@@ -59,10 +65,19 @@
                     </div>
                 </div>
             </div>
-                <button class="button"><a  href="themgiohang.php">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a></button>
-                <button class="button"><a  href="../pages/Dangnhap.php">Đăng nhập</a></button>
+            <?php if(isset($users['email'])){?>
+               <button class="button"><a  href="../pages/viewcard.php">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a></button>
+
+
+                <button class="button"><a><?php echo $users['email']?></a></button>
+
+                <button class="button" ><a href="../pages/logout.php">Đăng Xuất</a></button>
+            
+                
+                <?php } else{
+       ?><button class="button"><a  href="../pages/viewcard.php">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a></button>
+       <button class="button"><a  href="../pages/register.php">Đăng ký</a></button>
+       <button class="button"><a  href="../pages/login.php">Đăng nhập</a></button>
+                <?php }?>
             </div>
         </div>
-    </div>
-</body>
-</html>

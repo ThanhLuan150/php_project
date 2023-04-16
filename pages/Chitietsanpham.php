@@ -4,7 +4,9 @@
   <title>Detail</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../styles/Chitietsanpham.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/header.css">
+  <link rel="stylesheet" href="../styles/chitietsanpham.css">
   <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
   <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
   <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -17,16 +19,123 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+    .noiquyp1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FF0000;
+}
+.noiquy2 ul{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+.background{
+    background: #EFEFEF;
+    padding-bottom: 30px;
+    }
+    .backgroundp1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
+    }
+    .listproductssp1{
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 27px;
+
+      color: #000000;
+
+    }
+
+    .title{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+        }
+
+    .list_schools{
+            display: grid ;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap:30px;
+            list-style-type:none;
+    }
+    .item{
+        background: #fff;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .img4{
+        Width:262px;
+        Height:290px;
+        border-radius: 10px 10px 0 0 ;
+    }
+    .informationproductp1{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        margin-left: 13px;
+    }
+    .informationproductp2{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #ED2353;
+        margin-left: 13px;
+    }
+    .button111{
+        margin-bottom:20px;
+        margin-left: 13px;
+    }
+    .bt2{
+        background: #F2DFE3;
+        border-radius: 20px;
+        border: 1px solid  #F2DFE3 ;
+        height:30px;
+        width: 100px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+       
+    }
+    .a1{
+        color: #000000;
+    }
+</style>
 <body>
-    <?php include('header.php') ?>
+  
+
+    <?php require_once ('../Admin/db.php');
+    session_start();
+     include('header.php'); ?>
     <div class="body">
       <div class="container">
         <?php
-            $id = $_GET["id"];
+        if(isset($_GET["id"])){
+            $id = $_GET["id"];}
 
-            include('../database/ketnoidatabase.php');
-
-            $sql = "SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories;";
+            $sql = "SELECT * FROM categories inner join clothes on clothes.id_categories=categories.id_categories";
             $result = $mysqli->query($sql);
         ?>
         <!-- ***** Call to Action Start ***** -->
@@ -39,21 +148,33 @@
                 <?php while ($row = $result->fetch_assoc()) {
                   if ($id == $row["id_clothes"]) {
                 ?>
+               
                   <div class="img">
                     <img class="img1" src="<?php echo $row["image"]; ?>" alt="Card image">
                   </div>
                   <div class="detail2">
+                  <form method="GET" action="cart.php">
                       <div class="category">
                           <ul>
-                            <li><a class="categorya" href="home.php">Trang chủ</a></li>
-                            <li><a class="categorya" href="sanpham.php">Sản phẩm</a></li>
-                            <li><a class="categorya" href="#"><?php echo $row["name_categories"]; ?></a></li>
+                            <li>Trang chủ</a></li>
+                            <li>Sản phẩm</a></li>
+                            <li><a class="categorya" href="#"><?php echo $row["name_clothes"]; ?></a></li>
                           </ul>
+                          
                       </div>
                       <br>
                       <p class="categoryp1"><?php echo $row["name_clothes"]; ?></p>
                       <p class="categoryp2"><?php echo $row["rent_prices"]; ?></p>
-                      <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
+                      <input type="number" name="quantity" value="1">
+                      <input type="hidden" name="id" value="<?php echo $row['id_clothes'] ?>">
+                      <?php 
+                        
+                      ?>
+                      <div class="function">
+                          <button type="submit" class="btn btn-primary">Đặt mua</button>
+                          <button class="functionbutton">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a></button>
+                      </div>
+                  </from>
                       <div class="list">
                           <ul>
                             <li>Có Hàng Tại : Quận Sơn Trà</li>
@@ -72,10 +193,7 @@
                           <li>Thời gian làm việc:Từ 9h sáng đến 21 giờ tối mỗi ngày .</li>
                         </ul>
                       </div>
-                      <div class="function">
-                          <button type="submit"class="functionbutton"><a href="">Đặt mua</a> </button>
-                          <button class="functionbutton"><a class="functionbutton1"  href="themgiohang.php">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a></button>
-                      </div>
+                      
                     </div>
                   </div>
                 <?php
@@ -89,6 +207,24 @@
       </div>
     </div>
     <br><br><br><br><br>
+    <br><br><br><br><br>
+    <div class="mota">
+        <div class="container">
+        <p>Mô tả</p>
+        <br>
+        <br>
+        <br>
+        <br>
+          <center>
+            <img class="img1" src="<?php echo $row["image"]; ?>" alt="Card image">
+            <br><br><br>
+            <img class="img1" src="<?php echo $row["image"]; ?>" alt="Card image">
+            <br><br><br>
+            <img class="img1" src="<?php echo $row["image"]; ?>" alt="Card image">
+          </center>
+        </div>
+    </div>
+    <br><br> <br>
     <div class="noiquy">
       <div class="container">
         <p class="noiquyp1">Khi đến với ÁO CỔ PHỤC TTDVL  khách hàng không phải lo lắng khi đi thuê áo dài</p>
@@ -130,12 +266,13 @@
       <div class="container">
           <p class="listproductssp1">SẢN PHẨM GỢI Ý</p>
           <div class=".list_schools">
-            <div class="container"><br>
+            <div class="container">
+            <br>
             <?php
-              include('../database/ketnoidatabase.php');
-              $sql="SELECT * FROM categories inner join clothes on clothes.id_categories= .categories.id_categories ORDER BY RAND() ";
-                // Câu truy vấn này dùng đề random hiển thị ngẫu nhiên sản phẩm 
-            $result = $mysqli->query($sql);
+        
+
+        $sql = "SELECT * FROM categories inner join clothes on clothes.id_categories=categories.id_categories WHERE categories.id_categories =5;";
+        $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
                 // output data of each row
@@ -151,8 +288,8 @@
                                     <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
                                     <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                 <div class="button111">
-                                    <button class="bt2"><a class="a1"  href="chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
+                                    <button class="bt2"><a class="a1" href="chitietsanpham.php?id=<?php echo $row['id_clothes']; ?>">Details</a></button>  
+                                    <button class="bt2">Đặt thuê</button>
                                 </div>
                             </div>
                     </div>
@@ -163,7 +300,8 @@
                 $mysqli->close();
                 ?>
             </div>
-        </div><br>
+        </div>
+        <br>
       </div>
     </div>
     </div>
