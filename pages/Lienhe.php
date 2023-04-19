@@ -1,3 +1,31 @@
+<?php
+if(isset($_POST['submit'])){
+    // Lấy thông tin từ biểu mẫu
+    $name = $_POST['fname'];
+    $email = $_POST['email'];
+    $phone = $_POST['sdt'];
+    $message = $_POST['message'];
+
+    // Thiết lập địa chỉ email người nhận
+    $to = "youremail@example.com";
+
+    // Thiết lập tiêu đề email
+    $subject = "Liên hệ từ $name";
+
+    // Thiết lập nội dung email
+    $body = "Tên: $name\n\nEmail: $email\n\nSố điện thoại: $phone\n\nNội dung:\n$message";
+
+    // Thiết lập tiêu đề và địa chỉ email người gửi
+    $headers = "From: $name <$email>";
+
+    // Gửi email
+    if(mail($to, $subject, $body, $headers)){
+        echo "Nội dung của bạn đã được gửi đi thành công.";
+    } else {
+        echo "Có lỗi xảy ra khi gửi nội dung của bạn.";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
