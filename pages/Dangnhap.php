@@ -1,38 +1,39 @@
 <?php
-  // Thông tin đăng nhập cơ sở dữ liệu MySQL
+session_start();
+// Kết nối đến cơ sở dữ liệu MySQL
+include_once '../database/ketnoidatabase.php';
 
-
-  // Kết nối đến cơ sở dữ liệu MySQL
-  include_once '../database/ketnoidatabase.php';
-
-  // Kiểm tra kết nối
-  if (mysqli_connect_errno()) {
-    die("Không thể kết nối đến cơ sở dữ liệu MySQL: " . mysqli_connect_error());
-  }
-
-  // Xử lý thông tin đăng nhập
-  if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
+if(isset($_POST['submit'])){
+    // Lấy thông tin đăng nhập từ biểu mẫu HTML
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Lấy thông tin người dùng từ cơ sở dữ liệu
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $result = mysqli_query($mysqli, $sql);
-    // Kiểm tra xem có người dùng nào khớp với thông tin đăng nhập hay không
-    if (mysqli_num_rows($result)>=1) {
-      // Đăng nhập thành công
-      session_start();
-      $_SESSION["username"] = $username;
-      header("Location: Home.php");
-    } else {
-      // Đăng nhập không thành công
-      $error = "Tên đăng nhập hoặc mật khẩu không đúng.";
-    }
-  }
+    // Truy vấn cơ sở dữ liệu để kiểm tra thông tin đăng nhập của người dùng
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = mysqli_query($mysqli, $query);
 
-  // Đóng kết nối đến cơ sở dữ liệu MySQL
-  mysqli_close($mysqli );
+    // Kiểm tra xem người dùng có tồn tại trong cơ sở dữ liệu hay không
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        if ($row["role"] == 1) {
+            // Nếu đăng nhập là admin, chuyển hướng đến trang quản trị
+            $_SESSION['username'] = $username;
+            header("Location: Lienhe.php");
+        } else {
+            // Nếu đăng nhập là người dùng, chuyển hướng đến trang chính
+            $_SESSION['username'] = $username;
+            header("Location: Home.php");
+        }
+    } else {
+        // Nếu thông tin đăng nhập không chính xác, hiển thị thông báo lỗi
+        echo "Tên đăng nhập hoặc mật khẩu không đúng.";
+    }
+}
+
+// Đóng kết nối đến cơ sở dữ liệu MySQL
+mysqli_close($mysqli);
 ?>
+
 
 
 <!DOCTYPE html>
@@ -42,6 +43,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../assets/footer/footer.css">
+    <link rel="stylesheet" href="../assets/header/header.css">
     <link rel="stylesheet" href="../styles/Dangnhap.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
@@ -59,9 +62,9 @@
     <?php include('header.php') ?>
     <div class="background">
         <div class="container">
-            <div class="dangky">
+<div class="dangky">
                 <div class="dangky1">
-                    <form action="dangnhap.php" method="post">
+                    <form action="Dangnhap.php" method="post">
                         <p class="dangkyp">ĐĂNG NHẬP</p>
                         <br> <br>
                         <div class="name">
@@ -79,7 +82,7 @@
                 </div>
                 <div class="img">
                     <img class="img1" src="../img/content.jpg" alt="">
-                    <a class="imga" href="../pages/Dangky.php">Tạo tài khoản</a>
+                    <a class="imga" href="Dangky.php">Tạo tài khoản</a>
                 </div>
             </div>
         </div>
