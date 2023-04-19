@@ -33,11 +33,11 @@
                 
             <?php
                 include('../database/ketnoidatabase.php');
+              
 
                 // Lấy dữ liệu từ form tìm kiếm
                 if (isset($_GET['search'])) {
                     $search_query = $_GET['search_query'];
-
                     // Tìm kiếm dữ liệu trong cơ sở dữ liệu
                     $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories where name_clothes LIKE '%$search_query%' or rent_prices LIKE '%$search_query%' or sex LIKE '%$search_query%' ;";
                     $result = $mysqli->query($sql);
@@ -59,7 +59,7 @@
                                             <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
                                             <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
                                         <div class="button111">
-                                            <button class="bt2"><a class="a1"  href="detail.php?id=<?php echo $row["id_clothes"];?>">Detail</a></button>  
+                                            <button class="bt2"><a class="a1"  href="../pages/Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Detail</a></button>  
                                             <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
                                         </div>
                                     </div>

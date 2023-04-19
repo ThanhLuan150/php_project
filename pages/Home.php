@@ -22,6 +22,9 @@
     <?php
     include 'header.php';
     ?>
+    <?php 
+        'Refresh: 1; url=Home.php';
+     ?>
     <div class="poster">
         <div class="mySlides fade">
             <img class="img1" src="../img/poster.jpg" alt=""style="width:100%">
@@ -81,21 +84,31 @@
     <div class="background">
         <div class="container">
             <br>
-            <br>
-            <select class="input" name="id_categories">
-              <?php
-                include('../database/ketnoidatabase.php');
-                $sql="SELECT*FROM  categories";
-                $query=mysqli_query($mysqli,$sql);
-                while($row_cate = mysqli_fetch_assoc($query)){?>
-                    <option value="<?php echo $row_cate['id_categories'];?>"><?php echo $row_cate['name_categories'];?></option>
-
-                <?php }?>
-          </select>
-            <p class="backgroundp1">Áo Đối Khẩm</p>
+            <form method="GET" action="../Function/locsanpham.php">
+                <select class="input" name="id_categories" id="categories">
+                    <?php
+                    // Kết nối đến cơ sở dữ liệu
+                    include('../database/ketnoidatabase.php');
+                    
+                    // Truy vấn danh sách các danh mục
+                    $sql = "SELECT * FROM categories";
+                    $result = mysqli_query($mysqli, $sql);
+                    
+                    // Hiển thị danh sách các danh mục trong dropdown list
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<option value="' . $row['id_categories'] . '">' . $row['name_categories'] . '</option>';
+                    }
+                    
+                    // Đóng kết nối
+                    mysqli_close($mysqli);
+                    ?>
+            </select>
+            <button class="button" type="submit">Lọc</button>
+            </form>
+          <br> <br>
             <?php
             include('../database/ketnoidatabase.php');
-            $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 9 and 17 ORDER BY RAND();";
+            $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories;";
             $result = $mysqli->query($sql);
 
             if ($result->num_rows > 0) {
@@ -126,159 +139,7 @@
                 $mysqli->close();
                 ?>
             </div>
-        </div>
-        <br>
-        <div class="container">
-            <p class="backgroundp1">Áo giao lĩnh</p>
-            <?php
-             include('../database/ketnoidatabase.php');
-             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 17 and 36 ORDER BY RAND() ;";
-            $result = $mysqli->query($sql);
-
-            if ($result->num_rows > 0) {
-                // output data of each row
-            ?>
-                <div class="list_schools">
-                    <?php while ($row = $result->fetch_assoc()) { ?>
-                            <div class="item">
-                                <div class="image11">
-                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
-                                </div>
-                                <br>
-                                <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
-                                <div class="button111">
-                                    <button class="bt2"><a class="a1" href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                    <button class="bt2"><a  class="a1"href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                                </div>
-                            </div>
-                    </div>
-                <?php  }
-                } else {
-                    echo "Không có kết quả để hiển thị ra";
-                }
-                $mysqli->close();
-                ?>
             </div>
-        </div>
-        <br>
-        <div class="container">
-            <p class="backgroundp1">Áo ngũ thân</p>
-            <?php
-             include('../database/ketnoidatabase.php');
-
-             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 37 and 55 ORDER BY RAND();";
-            $result = $mysqli->query($sql);
-
-            if ($result->num_rows > 0) {
-                // output data of each row
-            ?>
-                <div class="list_schools">
-                    <?php while ($row = $result->fetch_assoc()) { ?>
-                            <div class="item">
-                                <div class="image11">
-                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
-                                </div>
-                                <br>
-                                <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
-                                <div class="button111">
-                                    <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                                </div>
-                            </div>
-                    </div>
-                <?php  }
-                } else {
-                    echo "Không có kết quả để hiển thị ra";
-                }
-                $mysqli->close();
-                ?>
-            </div>
-        </div>
-        <br>
-        <div class="container">
-            <p class="backgroundp1">Áo tấc</p>
-            <?php
-             include('../database/ketnoidatabase.php');
-
-             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 56 and 75 ORDER BY RAND();";
-            $result = $mysqli->query($sql);
-
-            if ($result->num_rows > 0) {
-                // output data of each row
-            ?>
-                <div class="list_schools">
-                    <?php while ($row = $result->fetch_assoc()) { ?>
-                            <div class="item">
-                                <div class="image11">
-                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
-                                </div>
-                                <br>
-                                <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
-                                <div class="button111">
-                                    <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                                </div>
-                            </div>
-                    </div>
-                <?php  }
-                } else {
-                    echo "Không có kết quả để hiển thị ra";
-                }
-                $mysqli->close();
-                ?>
-            </div>
-        </div>
-        <br>
-        <div class="container">
-            <p class="backgroundp1">Áo nhật bình</p>
-            <?php
-             include('../database/ketnoidatabase.php');
-
-             $sql="SELECT*FROM categories inner join clothes on clothes.id_categories= .categories.id_categories and id_clothes between 76 and 91 ORDER BY RAND();";
-             // câu truy vấn này dùng để
-            $result = $mysqli->query($sql);
-
-            if ($result->num_rows > 0) {
-                // output data of each row
-            ?>
-                <div class="list_schools">
-                    <?php while ($row = $result->fetch_assoc()) { ?>
-                            <div class="item">
-                                <div class="image11">
-                                    <img class="img4" src="<?php echo $row["image"]; ?>" alt="">
-                                </div>
-                                <br>
-                                <div class="informationproduct">
-                                <p class="informationproductp1"><?php echo $row["name_clothes"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["rent_prices"]; ?></p>
-                                    <p class="informationproductp2"><?php echo $row["sex"]; ?></p>
-                                <div class="button111">
-                                    <button class="bt2"><a class="a1"href="Chitietsanpham.php?id=<?php echo $row["id_clothes"];?>">Details</a></button>  
-                                    <button class="bt2"><a class="a1" href="orders.php?id=<?php echo $row["id_clothes"];?>">Đặt thuê</a></button>
-                                    <a href="orders.php?id=<?php echo $row["id_clothes"];?>"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                                </div>
-                            </div>
-                    </div>
-                <?php  }
-                } else {
-                    echo "Không có kết quả để hiển thị ra";
-                }
-                $mysqli->close();
-                ?>
-            </div>
-        </div>
     </div>
     </div>
     <?php
