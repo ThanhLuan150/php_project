@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../styles/Home.css">
+    <link rel="stylesheet" href="../Reponsive/Reponsivehome.css">
     <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <script src="/bootstrap-5.2.2-dist/js/jquery.min.js"></script>
     <script src="/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
@@ -23,9 +24,6 @@
     <?php
     include 'header.php';
     ?>
-    <?php 
-        'Refresh: 1; url=Home.php';
-     ?>
     <div class="poster">
         <div class="mySlides fade">
             <img class="img1" src="../img/poster.jpg" alt=""style="width:100%">
@@ -78,7 +76,6 @@
             <p class="inforproductp1">Địa điểm cho thuê - Bán cổ phục các loại giá rẻ - Uy tín - Chất lượng</p>
             <center>
                 <img class="img3" src="../img/thongtin.jpg" alt="">
-                <button class="inforproducbutton" type="submit"><a  style="color:#fff; border-radius:10px;" href="banggiaphucvu.php">THUÊ CỔ PHỤC</a></button>
             </center>
         </div>
     </div>
