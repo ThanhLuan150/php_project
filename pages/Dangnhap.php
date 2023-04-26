@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
         }
 
     } else {
-        echo "<script> alert('Tên đăng nhập hoặc mật khẩu không đúng.');</script>";
+        echo "<script> alert('Tên đăng nhập hoặc mật khẩu không đúng nhé.');</script>";
     }
     
 
