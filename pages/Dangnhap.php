@@ -11,26 +11,30 @@ if(isset($_POST['submit'])){
     // Truy vấn cơ sở dữ liệu để kiểm tra thông tin đăng nhập của người dùng
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $result = mysqli_query($mysqli, $query);
+   
 
-    // Kiểm tra xem người dùng có tồn tại trong cơ sở dữ liệu hay không
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         if ($row["role"] == 1) {
-            // Nếu đăng nhập là admin, chuyển hướng đến trang quản trị
+            $_SESSION['id'] = $result['id'];
             $_SESSION['username'] = $username;
             header("Location: Lienhe.php");
+            exit;
         } else {
-            // Nếu đăng nhập là người dùng, chuyển hướng đến trang chính
             $_SESSION['username'] = $username;
             header("Location: Home.php");
+            exit;
         }
+
     } else {
-        // Nếu thông tin đăng nhập không chính xác, hiển thị thông báo lỗi
-        echo "Tên đăng nhập hoặc mật khẩu không đúng.";
+        echo "<script> alert('Tên đăng nhập hoặc mật khẩu không đúng.');</script>";
     }
+    
+
 }
 
-// Đóng kết nối đến cơ sở dữ liệu MySQL
+
+
 mysqli_close($mysqli);
 ?>
 
