@@ -198,8 +198,8 @@
                 grid-template-columns: 1fr 1fr 1fr ;
                 gap:30px;
                 list-style-type:none;
-                margin-left: 20px;
-                margin-right: 10px;
+                margin-left: 50px;
+                margin-right: 40px;
         }
         .item{
             background: #fff;
@@ -600,8 +600,8 @@
     
         
     .img1{
-        height: 466px;
-        width: 100%;
+        
+        display: none;
     }
     .introducep1{
         font-family: 'Inter';
@@ -632,8 +632,6 @@
         color: #C834E2;
     }
     .introductcontent{
-        display: grid;
-        grid-template-columns: 45% 55%;
         margin-top: 40px;
         margin-left: 50px;
         margin-right: 50px;
@@ -732,7 +730,7 @@
     
         .list_schools{
                 display: grid ;
-                grid-template-columns: 1fr   ;
+                grid-template-columns: 1fr  ;
                 gap:30px;
                 margin-left:50px;
                 margin-right: 40px;
