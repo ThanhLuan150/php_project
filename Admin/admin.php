@@ -1,3 +1,19 @@
+
+<?php
+session_start();
+// Kiểm tra trạng thái đăng nhập của người dùng
+if(isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    // Hiển thị thông tin đăng nhập của người dùng
+    echo "Chào mừng $username đến với trang chủ!";
+    // Thêm nút đăng xuất
+    echo "<a href='../pages/Dangxuat.php'>Đăng xuất</a>";
+} else {
+    // Nếu người dùng chưa đăng nhập, đưa họ đến trang đăng nhập
+    header("Location: ../pages/Dangnhap.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
