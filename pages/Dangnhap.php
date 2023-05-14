@@ -15,10 +15,10 @@ if(isset($_POST['submit'])){
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        if ($row["role"] == 1) {
-            $_SESSION['id'] = $result['id'];
+        if ($row['role'] == 1) {
+            // $_SESSION['id'] = $result['id'];
             $_SESSION['username'] = $username;
-            header("Location: Lienhe.php");
+            header("Location: ../Admin/admin.php");
             exit;
         } else {
             $_SESSION['username'] = $username;
