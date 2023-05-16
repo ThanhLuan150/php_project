@@ -1,31 +1,42 @@
 <?php
-if(isset($_POST['submit'])){
-    // Lấy thông tin từ biểu mẫu
-    $name = $_POST['fname'];
+include_once '../database/ketnoidatabase.php';
+
+if (isset($_POST["submit"])) {
+    $nameuser = $_POST['nameuser'];
     $email = $_POST['email'];
-    $phone = $_POST['sdt'];
-    $message = $_POST['message'];
+    $sdt = $_POST['sdt'];
+    $tieude = $_POST['tieude'];
+    $noidung = $_POST['noidung'];
 
-    // Thiết lập địa chỉ email người nhận
-    $to = "youremail@example.com";
+    $data = array(
+        'nameuser' => $nameuser,
+        'email' => $email,
+        'sdt' => $sdt,
+        'tieude' => $tieude,
+        'noidung' => $noidung
+    );
 
-    // Thiết lập tiêu đề email
-    $subject = "Liên hệ từ $name";
+    $conn = mysqli_connect("localhost", "root", "", "rent_clothes");
 
-    // Thiết lập nội dung email
-    $body = "Tên: $name\n\nEmail: $email\n\nSố điện thoại: $phone\n\nNội dung:\n$message";
-
-    // Thiết lập tiêu đề và địa chỉ email người gửi
-    $headers = "From: $name <$email>";
-
-    // Gửi email
-    if(mail($to, $subject, $body, $headers)){
-        echo "Nội dung của bạn đã được gửi đi thành công.";
-    } else {
-        echo "Có lỗi xảy ra khi gửi nội dung của bạn.";
+   
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
     }
+
+
+    $sql = "INSERT INTO lienhe (nameuser, email, sdt, tieude, noidung) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $nameuser, $email, $sdt, $tieude, $noidung);
+    $stmt->execute();
+
+    $stmt->close();
+    mysqli_close($conn);
+
+   
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,17 +84,20 @@ if(isset($_POST['submit'])){
             </div>
 
                     <div class="content-fromt">
-                        <form action="lienhe.php" method="post">
+                        <form action="Lienhe.php" method="post">
                             <label for="fname">Tên của bạn </label><br>
-                            <input style="width:900px" type="text"  id="fname" name="fname"><br><br>
+                            <input style="width:900px" type="text"  id="fname" name="nameuser"><br><br>
                             <label for="fname">Email</label><br>
                             <input style="width:900px" type="text"  id="email" name="email"><br><br>
                             <label for="fname">Số điệnthoại</label><br>
                             <input style="width:900px" type="text"  id="sdt" name="sdt"><br><br>
+                            <label for="fname">tieu de</label><br>
+                            <input style="width:900px" type="text"  id="sdt" name="tieude"><br><br>
                             <label for="fname">Nội dung</label><br>
-                            <textarea style="width:900px" name="message" id="" cols="30" rows="10"></textarea> <br><br>
+                            <textarea style="width:900px" name="noidung" id="" cols="30" rows="10"></textarea> <br><br>
+                            <button class="button-fromt" name ="submit">Gửi nội dung</button>
 
-                             <input type="button" class="button-fromt" name="submit" value="Gửi nội dung">
+                             <!-- <input type="button" class="button-fromt" name="submit" value="Gửi nội dung"> -->
                         </form><br>
                         <h2 class="h2chiduong">CHỈ ĐƯỜNG ĐI ĐẾN ÁO CỔ PHỤC TTDVL</h2>
                         <div class="wpb_map_wraper"><iframe style="width:900px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.1122480382614!2d108.23859831416979!3d16.05966394396151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142177f0057f675%3A0xdec5dbe31838c835!2zMzY1UitWOUcsIDEwMUIgTMOqIEjhu691IFRyw6FjLCBQaMaw4bubYyBN4bu5LCBTxqFuIFRyw6AsIMSQw6AgTuG6tW5nIDU1MDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1680865040827!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>

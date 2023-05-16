@@ -61,6 +61,8 @@
             </div>
                 <button class="button"><a  href="themgiohang.php">Giỏ hàng <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a></button>
                 <button class="button"><a  href="../pages/Dangnhap.php">Đăng nhập</a></button>
+                <button class="button"><a  href="../pages/Dangxuat.php">Đăng xuất</a></button>
+
             </div>
         </div>
     </div>
